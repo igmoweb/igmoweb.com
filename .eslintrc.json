@@ -1,0 +1,33 @@
+{
+	"extends": [ "eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended" ],
+	"rules": {
+		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+		"react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+		"react/react-in-jsx-scope": 0, // Not needed in WP
+		"no-unused-vars": 1,
+		"react/display-name": 0,
+		"react/prop-types": 0
+	},
+	"parser": "babel-eslint",
+	"plugins": [ "react", "react-hooks" ],
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"node": true,
+		"jest": true,
+		"jquery": true
+	},
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"settings": {
+		"react": {
+			"version": "16.13.1"
+		}
+	}
+}
