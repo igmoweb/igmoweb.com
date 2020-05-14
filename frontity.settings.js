@@ -14,11 +14,8 @@ export default {
 				theme: {
 					topBannerPage: '/hola',
 					menu: [
-						[ 'Sobre m1í', '/kitchen-sink' ],
-						[ 'Sob2re mí', '/category/nature4/' ],
-						[ 'Sobr3e mí', '/category/nature2/' ],
-						[ 'Sobr4e mí', '/category/nature3/' ],
-						[ 'Sobr5e mí', '/category/nature5/' ],
+						[ 'Kitchen Sink', '/kitchen-sink' ],
+						[ 'Cursos', '/cursos' ],
 					],
 					featured: {
 						showOnList: true,
