@@ -1,5 +1,5 @@
 import React from 'react';
-import { Head, connect, decode } from 'frontity';
+import { connect, decode, Head } from 'frontity';
 
 const Title = ( { state } ) => {
 	// Get data about the current URL.

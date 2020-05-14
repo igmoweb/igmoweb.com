@@ -1,15 +1,34 @@
 {
-	"extends": [ "eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended" ],
+	"extends": [
+		"wordpress",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended"
+	],
 	"rules": {
 		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
 		"react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
 		"react/react-in-jsx-scope": 0, // Not needed in WP
 		"no-unused-vars": 1,
 		"react/display-name": 0,
-		"react/prop-types": 0
+		"react/prop-types": 0,
+		"react/jsx-sort-props": [
+			"error",
+			{
+				"reservedFirst": [ "key", "ref" ],
+				"callbacksLast": true
+			}
+		],
+		"sort-imports": [
+			"error",
+			{
+				"memberSyntaxSortOrder": [ "all", "single", "multiple", "none" ]
+			}
+		],
+		"sort-destructure-keys/sort-destructure-keys": "error",
+		"yoda": 0
 	},
 	"parser": "babel-eslint",
-	"plugins": [ "react", "react-hooks" ],
+	"plugins": [ "react", "react-hooks", "sort-destructure-keys" ],
 	"env": {
 		"browser": true,
 		"commonjs": true,

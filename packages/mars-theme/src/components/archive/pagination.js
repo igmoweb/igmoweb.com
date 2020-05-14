@@ -1,6 +1,9 @@
+import { NoDecoratedLink } from '../common/link';
+import config from '../../config';
 import React, { useEffect } from 'react';
 import { connect, styled } from 'frontity';
-import Link from '../link';
+
+const { fontSizes } = config;
 
 /**
  * Pagination Component
@@ -10,7 +13,7 @@ import Link from '../link';
  * The `state`, `actions`, `libraries` props are provided by the global context,
  * when we wrap this component in `connect(...)`
  */
-const Pagination = ( { state, actions } ) => {
+const Pagination = ( { actions, state } ) => {
 	// Get the total posts to be displayed based for the current link
 	const { next, previous } = state.source.get( state.router.link );
 
@@ -21,23 +24,21 @@ const Pagination = ( { state, actions } ) => {
 	}, [] );
 
 	return (
-		<div>
-			{ /* If there's a next page, render this link */ }
+		<StyledPagination>
 			{ next && (
-				<Link link={ next }>
-					<Text>← Older posts</Text>
-				</Link>
+				<PageLink css={ { textAlign: 'left' } } link={ next }>
+					← En episodios anteriores
+				</PageLink>
 			) }
 
 			{ previous && next && ' - ' }
 
-			{ /* If there's a previous page, render this link */ }
 			{ previous && (
-				<Link link={ previous }>
-					<Text>Newer posts →</Text>
-				</Link>
+				<PageLink css={ { textAlign: 'right' } } link={ previous }>
+					En el próximo capítulo →
+				</PageLink>
 			) }
-		</div>
+		</StyledPagination>
 	);
 };
 
@@ -47,7 +48,14 @@ const Pagination = ( { state, actions } ) => {
  */
 export default connect( Pagination );
 
-const Text = styled.em`
+const StyledPagination = styled.div`
+	display: flex;
+	> * {
+		flex-grow: 1;
+	}
+`;
+const PageLink = styled( NoDecoratedLink )`
 	display: inline-block;
 	margin-top: 16px;
+	font-size: ${fontSizes.small};
 `;

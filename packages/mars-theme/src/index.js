@@ -17,6 +17,7 @@ const marsTheme = {
 		 * relevant state. It is scoped to the `theme` namespace.
 		 */
 		theme: {
+			isTopBannerActive: false,
 			menu: [],
 			isMobileMenuOpen: false,
 			featured: {
@@ -31,11 +32,8 @@ const marsTheme = {
 	 */
 	actions: {
 		theme: {
-			toggleMobileMenu: ( { state } ) => {
-				state.theme.isMobileMenuOpen = ! state.theme.isMobileMenuOpen;
-			},
-			closeMobileMenu: ( { state } ) => {
-				state.theme.isMobileMenuOpen = false;
+			toggleTopBanner: ( { state } ) => {
+				state.theme.isTopBannerActive = ! state.theme.isTopBannerActive;
 			},
 		},
 	},

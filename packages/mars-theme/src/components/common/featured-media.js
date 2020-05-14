@@ -2,11 +2,18 @@ import React from 'react';
 import { connect, styled } from 'frontity';
 import Image from '@frontity/components/image';
 
-const FeaturedMedia = ( { state, id } ) => {
+const Container = styled.div``;
+
+const StyledImage = styled( Image )`
+	display: block;
+	height: auto;
+	width: 100%;
+`;
+
+const FeaturedMedia = ( { state, id, size = 'full' } ) => {
 	const media = state.source.attachment[ id ];
 
 	if ( ! media ) return null;
-
 	const srcset =
 		Object.values( media.media_details.sizes )
 			// Get the url and width of each size.
@@ -22,11 +29,14 @@ const FeaturedMedia = ( { state, id } ) => {
 				''
 			) || null;
 
+	const src = media.media_details.sizes[ size ]
+		? media.media_details.sizes[ size ].source_url
+		: media.source_url;
 	return (
 		<Container>
 			<StyledImage
 				alt={ media.title.rendered }
-				src={ media.source_url }
+				src={ src }
 				srcSet={ srcset }
 			/>
 		</Container>
@@ -34,15 +44,3 @@ const FeaturedMedia = ( { state, id } ) => {
 };
 
 export default connect( FeaturedMedia );
-
-const Container = styled.div`
-	margin-top: 16px;
-	height: 300px;
-`;
-
-const StyledImage = styled( Image )`
-	display: block;
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-`;

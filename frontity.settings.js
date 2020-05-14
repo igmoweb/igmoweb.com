@@ -1,42 +1,42 @@
-const settings = {
-  name: "igmoweb",
-  state: {
-    frontity: {
-      url: "https://test.frontity.io",
-      title: "Test Frontity Blog",
-      description: "WordPress installation for Frontity development"
-    }
-  },
-  packages: [
-    {
-      name: "@frontity/mars-theme",
-      state: {
-        theme: {
-          menu: [
-            ["Home", "/"],
-            ["Nature", "/category/nature/"],
-            ["Travel", "/category/travel/"],
-            ["Japan", "/tag/japan/"],
-            ["About Us", "/about-us/"]
-          ],
-          featured: {
-            showOnList: false,
-            showOnPost: false
-          }
-        }
-      }
-    },
-    {
-      name: "@frontity/wp-source",
-      state: {
-        source: {
-          api: "https://public-api.wordpress.com/wp/v2/sites/igmoweb.com"
-        }
-      }
-    },
-    "@frontity/tiny-router",
-    "@frontity/html2react"
-  ]
+export default {
+	name: 'igmoweb',
+	state: {
+		frontity: {
+			url: 'https://igmoweb.com',
+			title: 'A mí me funciona',
+			description: 'El blog de Ignacio Cruz',
+		},
+	},
+	packages: [
+		{
+			name: '@frontity/mars-theme',
+			state: {
+				theme: {
+					topBannerPage: '/hola',
+					menu: [
+						[ 'Sobre m1í', '/kitchen-sink' ],
+						[ 'Sob2re mí', '/category/nature4/' ],
+						[ 'Sobr3e mí', '/category/nature2/' ],
+						[ 'Sobr4e mí', '/category/nature3/' ],
+						[ 'Sobr5e mí', '/category/nature5/' ],
+					],
+					featured: {
+						showOnList: true,
+						showOnPost: false,
+					},
+				},
+			},
+		},
+		{
+			name: '@frontity/wp-source',
+			state: {
+				source: {
+					api:
+						'https://public-api.wordpress.com/wp/v2/sites/igmoweb.com',
+				},
+			},
+		},
+		'@frontity/tiny-router',
+		'@frontity/html2react',
+	],
 };
-
-export default settings;

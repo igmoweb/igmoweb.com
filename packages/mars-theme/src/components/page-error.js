@@ -1,10 +1,10 @@
 import React from 'react';
-import { styled, connect } from 'frontity';
+import { connect, styled } from 'frontity';
 
 const description404 = (
 	<>
 		That page can’t be found{ ' ' }
-		<span role="img" aria-label="confused face">
+		<span aria-label="confused face" role="img">
 			😕
 		</span>
 	</>
@@ -26,12 +26,14 @@ const Page404 = ( { state } ) => {
 	const title404 = 'Oops! 404';
 
 	return (
-		<Container>
-			<Title>{ data.is404 ? title404 : title }</Title>
-			<Description>
-				{ data.is404 ? description404 : description }
-			</Description>
-		</Container>
+		<>
+			<Container>
+				<Title>{ data.is404 ? title404 : title }</Title>
+				<Description>
+					{ data.is404 ? description404 : description }
+				</Description>
+			</Container>
+		</>
 	);
 };
 
