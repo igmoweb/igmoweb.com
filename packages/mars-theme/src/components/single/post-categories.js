@@ -19,7 +19,13 @@ export default connect( ( { post, state } ) => {
 	return (
 		postCategories && (
 			<PostCategoriesList>
-				{ postCategories.map( ( { id, link, name } ) => {
+				{ postCategories.map( ( category ) => {
+					if ( ! category ) {
+						return null;
+					}
+
+					const { id, link, name } = category;
+
 					return (
 						<li key={ id }>
 							<NoDecoratedLink key={ id } link={ link }>
