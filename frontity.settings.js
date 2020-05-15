@@ -9,7 +9,7 @@ export default {
 	},
 	packages: [
 		{
-			name: 'igmoweb-theme',
+			name: '@frontity/mars-theme',
 			state: {
 				theme: {
 					topBannerPage: '/hola',
