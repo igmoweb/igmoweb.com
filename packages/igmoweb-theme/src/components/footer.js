@@ -44,7 +44,7 @@ const StyledFontAwesomeIcon = styled( FontAwesomeIcon )`
 `;
 const Footer = ( { className, state } ) => {
 	return (
-		<div className={ className }>
+		<div className={ className } id="footer">
 			<StyledMaxWidth>
 				<NoDecoratedLink link="https://igmoweb.com/feed/">
 					RSS

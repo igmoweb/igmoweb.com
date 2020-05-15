@@ -5,7 +5,6 @@ import Nav from './nav';
 import MaxWidth from '../common/max-width';
 import config from '../../config';
 import { mq } from '../../styles';
-import { darken } from 'polished';
 
 const { colorPalette } = config;
 
@@ -54,9 +53,9 @@ const StyledNoDecoratedLink = styled( NoDecoratedLink )`
 
 const Header = ( { className, state } ) => {
 	return (
-		<div className={ className }>
+		<div className={ className } id="header">
 			<FlexMaxWidth>
-				<Container>
+				<Container id="branding">
 					<StyledNoDecoratedLink link="/">
 						<Title>{ state.frontity.title }</Title>
 					</StyledNoDecoratedLink>

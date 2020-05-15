@@ -16,7 +16,7 @@ const stripSlash = ( url ) => url.replace( /\/$/, '' );
  * It renders the navigation links
  */
 const Nav = ( { className, state } ) => (
-	<NavContainer className={ className }>
+	<NavContainer className={ className } id="navigation">
 		{ state.theme.menu.map( ( [ name, link ] ) => {
 			const isCurrentPage =
 				stripSlash( state.router.link ) === stripSlash( link );
