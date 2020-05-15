@@ -16,7 +16,7 @@ const Footer = ( { className } ) => {
 	return (
 		<div className={ className } id="footer">
 			<StyledMaxWidth>
-				<NoDecoratedLink link="https://igmoweb.com/feed/">
+				<NoDecoratedLink link="https://igmoweb.wordpress.com/feed/">
 					RSS
 				</NoDecoratedLink>
 				<SocialMenu />
