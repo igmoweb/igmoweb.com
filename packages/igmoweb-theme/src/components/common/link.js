@@ -11,10 +11,10 @@ const StyledAnchor = styled.a`
 
 const Link = ( {
 	actions,
-	link,
-	className,
-	children,
 	'aria-current': ariaCurrent,
+	children,
+	className,
+	link,
 } ) => {
 	const onClick = ( event ) => {
 		const isExternal = link.startsWith( 'http' );

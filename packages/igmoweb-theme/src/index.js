@@ -1,6 +1,6 @@
 import Theme from './components';
-import image from '@frontity/html2react/processors/image';
 import iframe from '@frontity/html2react/processors/iframe';
+import image from '@frontity/html2react/processors/image';
 
 const marsTheme = {
 	name: '@frontity/mars-theme',

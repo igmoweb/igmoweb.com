@@ -1,17 +1,17 @@
-import React from 'react';
-import { connect, styled } from 'frontity';
-import MaxWidth from './common/max-width';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MaxWidth from './common/max-width';
+import React from 'react';
+import config from '../config';
 import { mq } from '../styles';
+import screenReaderText from '../styles/screen-reader';
 import Link, { NoDecoratedLink } from './common/link';
+import { connect, styled } from 'frontity';
 import {
 	faGithub,
 	faLinkedin,
 	faTwitter,
 	faWordpress,
 } from '@fortawesome/free-brands-svg-icons';
-import screenReaderText from '../styles/screen-reader';
-import config from '../config';
 
 const { colorPalette } = config;
 

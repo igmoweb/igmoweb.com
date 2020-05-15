@@ -16,6 +16,7 @@ const TopBanner = connect( ( { actions, state } ) => {
 	const { topBannerPage } = state.theme;
 	useEffect( () => {
 		actions.source.fetch( topBannerPage );
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [] );
 
 	const data = state.source.get( topBannerPage );

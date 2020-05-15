@@ -12,6 +12,7 @@ const Single = ( { actions, state } ) => {
 	useEffect( () => {
 		// Prefetch the homepage
 		actions.source.fetch( '/' );
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [] );
 
 	const data = source.get( link );
