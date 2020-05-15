@@ -24,6 +24,7 @@
 		"@frontity/twentytwenty-theme": "^1.1.2",
 		"@frontity/wp-source": "^1.7.0",
 		"@wordpress/components": "^9.5.0",
+		"@wordpress/date": "^3.9.0",
 		"eslint-config-wordpress": "^2.0.0",
 		"frontity": "^1.5.3",
 		"highlight.js": "^10.0.2",
