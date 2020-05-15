@@ -28,6 +28,7 @@
 		"frontity": "^1.5.3",
 		"highlight.js": "^10.0.2",
 		"highlightjs-line-numbers.js": "^2.7.0",
+		"igmoweb-theme": "./packages/igmoweb-theme",
 		"lodash": "^4.17.15",
 		"polished": "^3.6.2",
 		"prismjs": "^1.20.0"
