@@ -12,5 +12,7 @@
     "type": "git",
     "url": "https://github.com/igmoweb/igmoweb.com.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@wordpress/date": "^3.9.0"
+  }
 }
