@@ -1,10 +1,10 @@
-import React from 'react';
-import { connect, styled } from 'frontity';
-import { NoDecoratedLink } from '../common/link';
-import Nav from './nav';
 import MaxWidth from '../common/max-width';
+import Nav from './nav';
+import { NoDecoratedLink } from '../common/link';
+import React from 'react';
 import config from '../../config';
 import { mq } from '../../styles';
+import { connect, styled } from 'frontity';
 
 const { colorPalette } = config;
 

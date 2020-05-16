@@ -1,9 +1,9 @@
+import ArchiveTitle from './archive-title';
 import List from './list';
 import Pagination from '../archive/pagination';
 import React from 'react';
 import TopBanner from './top-banner';
 import { connect } from 'frontity';
-import ArchiveTitle from './archive-title';
 
 const Archive = ( { state } ) => {
 	const data = state.source.get( state.router.link );
