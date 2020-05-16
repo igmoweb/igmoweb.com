@@ -51,7 +51,7 @@ export default css`
 			flex-grow: 0;
 		}
 
-		.wp-block-column:not( :first-child ) {
+		.wp-block-column:not( :first-of-type ) {
 			margin-left: 32px;
 		}
 	}

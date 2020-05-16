@@ -8,7 +8,7 @@ import ArchiveTitle from './archive-title';
 const Archive = ( { state } ) => {
 	const data = state.source.get( state.router.link );
 
-	const { isHome, isTaxonomy, items, page } = data;
+	const { isHome, isSearch, isTaxonomy, items, page } = data;
 
 	const posts = items.map( ( { id, type } ) => {
 		return state.source[ type ][ id ];
@@ -16,8 +16,8 @@ const Archive = ( { state } ) => {
 
 	return (
 		<>
-			{ page === 1 && isHome && <TopBanner /> }
-			{ isTaxonomy && <ArchiveTitle /> }
+			{ page === 1 && isHome && ! isSearch && <TopBanner /> }
+			<ArchiveTitle />
 			<List posts={ posts } />
 			<Pagination />
 		</>
