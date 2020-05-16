@@ -5,6 +5,7 @@ import config from '../../config';
 import { mq } from '../../styles';
 import React, { useEffect } from 'react';
 import { connect, styled } from 'frontity';
+import SocialMenu from '../common/social-menu';
 
 const { fontSizes } = config;
 
@@ -37,6 +38,7 @@ const TopBanner = connect( ( { actions, state } ) => {
 	const { content } = post;
 	return (
 		<StyledTopBanner>
+			<StyledSocialMenu />
 			<PostContent content={ content.rendered } />
 		</StyledTopBanner>
 	);
@@ -44,7 +46,17 @@ const TopBanner = connect( ( { actions, state } ) => {
 
 export default TopBanner;
 
+const StyledSocialMenu = styled( SocialMenu )`
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	.svg-inline--fa {
+		width: 1rem;
+	}
+`;
+
 const StyledTopBanner = styled.div`
+	position: relative;
 	margin-bottom: 4rem;
 	.wp-block-columns {
 		justify-content: center;
