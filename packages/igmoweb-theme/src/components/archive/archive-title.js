@@ -15,7 +15,7 @@ const ArchiveTitle = ( { state } ) => {
 			</>
 		);
 	} else if ( isSearch ) {
-		title = <>Search =&gt; { searchQuery }</>;
+		title = <>Buscando =&gt; { searchQuery }</>;
 	}
 
 	return (
