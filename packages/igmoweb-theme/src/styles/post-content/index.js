@@ -13,12 +13,12 @@ import quoteStyles from './quote';
 export default css( [
 	alignStyles,
 	buttonStyles,
-	codeStyles,
 	colorsStyles,
 	columnsStyles,
 	mediaStyles,
 	quoteStyles,
 	headingsStyles,
 	WPComCSS,
+	codeStyles,
 	hljsStyles,
 ] );

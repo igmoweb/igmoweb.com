@@ -26,7 +26,7 @@ export default css`
 
 	pre code {
 		background: transparent;
-		padding: 0;
+		padding: 1rem;
 		font-weight: 800;
 	}
 `;
