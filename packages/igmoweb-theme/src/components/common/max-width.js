@@ -1,5 +1,5 @@
-import { styled } from 'frontity';
 import config from '../../config';
+import { styled } from 'frontity';
 
 const { baseWidth } = config;
 

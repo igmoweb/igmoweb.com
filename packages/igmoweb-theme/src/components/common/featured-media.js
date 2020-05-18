@@ -1,6 +1,6 @@
+import Image from '@frontity/components/image';
 import React from 'react';
 import { connect, styled } from 'frontity';
-import Image from '@frontity/components/image';
 
 const Container = styled.div``;
 
@@ -10,7 +10,7 @@ const StyledImage = styled( Image )`
 	width: 100%;
 `;
 
-const FeaturedMedia = ( { state, id, size = 'full' } ) => {
+const FeaturedMedia = ( { id, size = 'full', state } ) => {
 	const media = state.source.attachment[ id ];
 
 	if ( ! media ) return null;

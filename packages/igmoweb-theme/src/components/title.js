@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect, decode, Head } from 'frontity';
+import { Head, connect, decode } from 'frontity';
 
 const Title = ( { state } ) => {
 	// Get data about the current URL.
@@ -10,7 +10,7 @@ const Title = ( { state } ) => {
 	if ( data.isTaxonomy ) {
 		// Add titles to taxonomies, like "Category: Nature - Blog Name" or "Tag: Japan - Blog Name".
 		// 1. Get the taxonomy entity from the state to get its taxonomy term and name.
-		const { taxonomy, name } = state.source[ data.taxonomy ][ data.id ];
+		const { name, taxonomy } = state.source[ data.taxonomy ][ data.id ];
 		// 2. Uppercase first letter of the taxonomy term (from "category" to "Category").
 		const taxonomyCapitalized =
 			taxonomy.charAt( 0 ).toUpperCase() + taxonomy.slice( 1 );
