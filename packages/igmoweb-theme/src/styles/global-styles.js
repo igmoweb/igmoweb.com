@@ -223,7 +223,7 @@ const accessibilitySettings = css`
 const listStyle = css`
 	ul,
 	ol {
-		margin: 0 0 3rem 3rem;
+		margin-bottom: 1rem;
 	}
 
 	ul {
