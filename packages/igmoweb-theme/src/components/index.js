@@ -38,6 +38,12 @@ const Theme = ( { state } ) => {
 					content={ state.frontity.description }
 					name="description"
 				/>
+				<link
+					href="https://igmoweb.wordpress.com/feed/"
+					rel="alternate"
+					title="Ignacio Cruz Moreno » Feed"
+					type="application/rss+xml"
+				/>
 				<html lang="es" />
 			</Head>
 			<StyledHeader />
