@@ -44,6 +44,10 @@ const Theme = ( { state } ) => {
 					title="Ignacio Cruz Moreno » Feed"
 					type="application/rss+xml"
 				/>
+				<meta
+					content="2Mxtpz_D7zcbzwE1_zvXiihh9chlWkdK-oiBqlrv3HE"
+					name="google-site-verification"
+				/>
 				<html lang="es" />
 			</Head>
 			<StyledHeader />
