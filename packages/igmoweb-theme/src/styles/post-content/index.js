@@ -1,4 +1,5 @@
 import WPComCSS from './wp-com.css';
+import alignStyles from './align';
 import buttonStyles from './buttons';
 import codeStyles from './code';
 import colorsStyles from './colors';
@@ -10,6 +11,7 @@ import mediaStyles from './media';
 import quoteStyles from './quote';
 
 export default css( [
+	alignStyles,
 	buttonStyles,
 	codeStyles,
 	colorsStyles,
