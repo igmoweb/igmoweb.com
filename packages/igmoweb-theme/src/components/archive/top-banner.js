@@ -48,11 +48,16 @@ const TopBanner = connect( ( { actions, state } ) => {
 export default TopBanner;
 
 const StyledSocialMenu = styled( SocialMenu )`
-	position: absolute;
-	top: 10px;
-	right: 20px;
 	.svg-inline--fa {
 		width: 1rem;
+	}
+	display: none;
+
+	${mq( 'medium' )} {
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 20px;
 	}
 `;
 
