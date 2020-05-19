@@ -54,7 +54,7 @@ const StyledSocialMenu = styled( SocialMenu )`
 	display: none;
 
 	${mq( 'medium' )} {
-		display: block;
+		display: flex;
 		position: absolute;
 		top: 10px;
 		right: 20px;
