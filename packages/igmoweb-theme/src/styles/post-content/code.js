@@ -29,4 +29,9 @@ export default css`
 		padding: 1rem;
 		font-weight: 800;
 	}
+
+	code {
+		background: #0f0f13;
+		padding: 3px;
+	}
 `;
