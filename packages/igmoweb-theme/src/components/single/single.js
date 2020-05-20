@@ -6,8 +6,9 @@ import React, { useEffect } from 'react';
 import { connect, styled } from 'frontity';
 
 const Single = ( { actions, state } ) => {
-	const { router, source } = state;
+	const { frontity, router, source } = state;
 	const { link } = router;
+	const { url } = frontity;
 
 	useEffect( () => {
 		// Prefetch the homepage

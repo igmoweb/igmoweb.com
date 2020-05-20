@@ -44,7 +44,6 @@ const PostCategoriesList = styled.ul`
 	display: flex;
 	margin-left: 0;
 	margin-bottom: 0;
-	margin-top: 1rem;
 	padding-left: 0;
 
 	${mq( 'medium' )} {

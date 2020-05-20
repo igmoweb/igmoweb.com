@@ -2,15 +2,49 @@ import PostCategories from './post-categories';
 import PublishDate from '../meta/publish-date';
 import config from '../../config';
 import { mq } from '../../styles';
+import {
+	FacebookIcon,
+	FacebookShareButton,
+	TwitterIcon,
+	TwitterShareButton,
+} from 'react-share';
 import { connect, styled } from 'frontity';
 
-export default connect( ( { post } ) => {
+export default connect( ( { post, state } ) => {
+	const { frontity } = state;
 	const { date } = post;
+	const { url } = frontity;
+
 	return (
 		<Meta>
 			<PublishDate postDate={ date } />
 			<Dot>·</Dot>
 			<PostCategories post={ post } />
+			<Dot>·</Dot>
+			<PostSharing className="sharing">
+				<TwitterShareButton
+					title={ post.title.rendered }
+					url={ `${ url }${ post.link }` }
+					via="igmoweb"
+				>
+					<TwitterIcon
+						bgStyle={ { fill: 'transparent' } }
+						round={ true }
+						size={ 28 }
+					/>
+				</TwitterShareButton>
+				<FacebookShareButton
+					title={ post.title.rendered }
+					url={ `${ url }${ post.link }` }
+					via="igmoweb"
+				>
+					<FacebookIcon
+						bgStyle={ { fill: 'transparent' } }
+						round={ true }
+						size={ 28 }
+					/>
+				</FacebookShareButton>
+			</PostSharing>
 		</Meta>
 	);
 } );
@@ -27,7 +61,8 @@ const Dot = styled.span`
 const Meta = styled.section`
 	display: flex;
 	flex-direction: column;
-	align-items: baseline;
+	align-items: center;
+
 	> * {
 		font-size: ${fontSizes.xsmall};
 		padding: 0 0.5rem;
@@ -41,3 +76,5 @@ const Meta = styled.section`
 		flex-direction: row;
 	}
 `;
+
+const PostSharing = styled.div``;

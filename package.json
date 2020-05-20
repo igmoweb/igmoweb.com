@@ -31,7 +31,8 @@
 		"igmoweb-theme": "./packages/igmoweb-theme",
 		"lodash": "^4.17.15",
 		"polished": "^3.6.2",
-		"prismjs": "^1.20.0"
+		"prismjs": "^1.20.0",
+		"react-share": "^4.1.0"
 	},
 	"devDependencies": {
 		"@wordpress/prettier-config": "^0.2.0",
