@@ -1,11 +1,11 @@
 import PostContent from '../single/post-content';
+import SocialMenu from '../common/social-menu';
 import Spinner from '../common/spinner';
 import _get from 'lodash/get';
 import config from '../../config';
 import { mq } from '../../styles';
 import React, { useEffect } from 'react';
 import { connect, styled } from 'frontity';
-import SocialMenu from '../common/social-menu';
 
 const { fontSizes } = config;
 
