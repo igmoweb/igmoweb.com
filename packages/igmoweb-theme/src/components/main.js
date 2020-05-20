@@ -17,7 +17,7 @@ const Main = ( { state } ) => {
 				<Author when={ data.isAuthor } />
 				<Archive when={ data.isArchive } />
 				<Single when={ data.isPostType } />
-				<PageError when={ data.isError } />
+				<PageError when={ data.isError || data.isAuthor } />
 			</Switch>
 		</Container>
 	);
