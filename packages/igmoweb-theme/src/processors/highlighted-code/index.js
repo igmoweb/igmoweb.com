@@ -8,7 +8,7 @@ highlight.configure( {
 } );
 
 const LANGS = {
-	plain: 'bash',
+	plain: '',
 	jscript: 'javascript',
 };
 
