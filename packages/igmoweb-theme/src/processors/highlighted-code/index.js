@@ -13,7 +13,7 @@ const LANGS = {
 };
 
 const mapWPLangs = ( lang ) => {
-	return LANGS[ lang ] ? LANGS[ lang ] : lang;
+	return typeof LANGS[ lang ] !== undefined ? LANGS[ lang ] : lang;
 };
 
 export default {
