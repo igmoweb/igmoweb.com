@@ -1,4 +1,5 @@
 import Theme from './components';
+import customProcessors from './processors';
 import iframe from '@frontity/html2react/processors/iframe';
 import image from '@frontity/html2react/processors/image';
 
@@ -43,7 +44,7 @@ const marsTheme = {
 			 * Add a processor to `html2react` so it processes the `<img>` tags
 			 * inside the content HTML. You can add your own processors too
 			 */
-			processors: [ image, iframe ],
+			processors: [ image, iframe, ...customProcessors ],
 		},
 	},
 };
