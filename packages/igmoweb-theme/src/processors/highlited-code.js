@@ -1,5 +1,11 @@
 import _get from 'lodash/get';
+import highlight from 'highlight.js';
+import React, { useEffect, useRef } from 'react';
 import { css, styled } from 'frontity';
+
+highlight.configure( {
+	tabReplace: '  ', // 4 spaces
+} );
 
 const LANGS = {
 	plain: 'javascript',
@@ -10,11 +16,18 @@ const mapWPLangs = ( lang ) => {
 	return LANGS[ lang ] ? LANGS[ lang ] : lang;
 };
 
-const HighlitedCode = ( { children, lang } ) => (
-	<CodeContainer className={ lang }>
-		{ children.replace( /^(\n)|(\r\n)/, '' ) }
-	</CodeContainer>
-);
+const HighlitedCode = ( { children, lang } ) => {
+	const codeRef = useRef( null );
+	useEffect( () => {
+		highlight.highlightBlock( codeRef.current );
+	} );
+
+	return (
+		<CodeContainer ref={ codeRef } className={ lang }>
+			{ children.replace( /^(\n)|(\r\n)/, '' ) }
+		</CodeContainer>
+	);
+};
 
 const CodeContainer = styled.code`
 	background: #000;
