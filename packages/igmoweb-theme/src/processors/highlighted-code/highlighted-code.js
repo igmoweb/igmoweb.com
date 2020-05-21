@@ -7,10 +7,14 @@ const HighlitedCode = ( { children, lang } ) => {
 	useEffect( () => {
 		highlight.highlightBlock( codeRef.current );
 	} );
+	const content =
+		typeof children === 'string'
+			? children.replace( /^(\n)|(\r\n)/, '' )
+			: children;
 
 	return (
 		<CodeContainer ref={ codeRef } className={ lang }>
-			{ children.replace( /^(\n)|(\r\n)/, '' ) }
+			{ content }
 		</CodeContainer>
 	);
 };
