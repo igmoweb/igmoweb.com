@@ -72,6 +72,7 @@ const StyledHeader = styled.header`
 		max-width: 100%;
 		inline-size: inherit;
 		max-height: 50px;
+		width: 50px;
 	}
 	${mq( 'medium' )} {
 		display: block;
