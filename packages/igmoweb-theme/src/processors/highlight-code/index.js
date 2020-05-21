@@ -1,7 +1,7 @@
+import HighlitedCode from './highlighted-code';
 import _get from 'lodash/get';
+import { css } from 'frontity';
 import highlight from 'highlight.js';
-import React, { useEffect, useRef } from 'react';
-import { css, styled } from 'frontity';
 
 highlight.configure( {
 	tabReplace: '  ', // 4 spaces
@@ -15,27 +15,6 @@ const LANGS = {
 const mapWPLangs = ( lang ) => {
 	return LANGS[ lang ] ? LANGS[ lang ] : lang;
 };
-
-const HighlitedCode = ( { children, lang } ) => {
-	const codeRef = useRef( null );
-	useEffect( () => {
-		highlight.highlightBlock( codeRef.current );
-	} );
-
-	return (
-		<CodeContainer ref={ codeRef } className={ lang }>
-			{ children.replace( /^(\n)|(\r\n)/, '' ) }
-		</CodeContainer>
-	);
-};
-
-const CodeContainer = styled.code`
-	background: #000;
-	padding: 3px;
-	font-weight: 800;
-	border: 1px solid #111;
-	border-radius: 0.2rem;
-`;
 
 export default {
 	name: 'highlighted-code',
