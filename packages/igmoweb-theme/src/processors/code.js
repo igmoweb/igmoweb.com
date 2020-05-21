@@ -1,4 +1,5 @@
 import _get from 'lodash/get';
+import { css, styled } from 'frontity';
 
 const LANGS = {
 	plain: 'javascript',
@@ -9,48 +10,43 @@ const mapWPLangs = ( lang ) => {
 	return LANGS[ lang ] ? LANGS[ lang ] : lang;
 };
 
+const HighlitedCode = ( { children, lang } ) => (
+	<CodeContainer className={ lang }>
+		{ children.replace( /^(\n)|(\r\n)/, '' ) }
+	</CodeContainer>
+);
+
+const CodeContainer = styled.code`
+	background: #000;
+	padding: 3px;
+	font-weight: 800;
+	border: 1px solid #111;
+`;
+
 export default {
 	name: 'code',
 	test: ( { node } ) => {
-		const { children, component, type } = node;
-		const firstChild = _get( children, '[0]' );
-		if (
-			type === 'element' &&
-			component === 'pre' &&
-			// We are not interested on preformatted blocks
-			node?.props?.className !== 'wp-block-preformatted' &&
-			// If the first child is a code tag, let's forget about it.
-			! (
-				firstChild.type === 'element' && firstChild.component === 'code'
-			)
-		) {
-			return true;
+		const { component, parent, type } = node;
+		if ( type !== 'element' || component !== 'code' ) {
+			return false;
 		}
 
-		return false;
+		if ( parent?.component === 'pre' ) {
+			return false;
+		}
+
+		return true;
 	},
 	processor: ( { node } ) => {
-		const { children, props } = node;
-		const { className = '' } = props;
-		// Find the language
-		const brush = /^brush\:\s([a-zA-Z]*)\;/gm.exec( className );
-		const lang = mapWPLangs( _get( brush, '[1]', '' ) );
+		node.props.css = css`
+			background: #0f0f13;
+			padding: 3px;
+			border-radius: 3px;
+			font-size: 0.9rem;
+		`;
 
-		// Add a <code> node inside the preformatted one.
-		node.children = [
-			{
-				type: 'element',
-				component: ( { children, lang } ) => (
-					<code className={ lang }>
-						{ children.replace( /^(\n)|(\r\n)/, '' ) }
-					</code>
-				),
-				props: {
-					lang: `lang-${ lang }`,
-				},
-				children,
-			},
-		];
+		console.log( 'node', node );
+
 		return node;
 	},
 };
