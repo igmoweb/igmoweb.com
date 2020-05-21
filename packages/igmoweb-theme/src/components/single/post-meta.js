@@ -61,19 +61,27 @@ const Dot = styled.span`
 const Meta = styled.section`
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	margin-bottom: 0;
 
 	> * {
 		font-size: ${fontSizes.xsmall};
 		padding: 0 0.5rem;
 	}
 
-	.publish-date {
+	.publish-date,
+	.post-categories,
+	.sharing {
 		padding-left: 0;
+		margin-bottom: 0.65rem;
+		${mq( 'medium' )} {
+			margin-bottom: 0;
+		}
 	}
 
 	${mq( 'medium' )} {
 		flex-direction: row;
+		align-items: center;
+		margin-bottom: 1rem;
 	}
 `;
 

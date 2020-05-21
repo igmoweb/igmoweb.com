@@ -18,7 +18,7 @@ export default connect( ( { post, state } ) => {
 
 	return (
 		postCategories && (
-			<PostCategoriesList>
+			<PostCategoriesList className="post-categories">
 				{ postCategories.map( ( category ) => {
 					if ( ! category ) {
 						return null;
