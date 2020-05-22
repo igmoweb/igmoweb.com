@@ -2,12 +2,13 @@ import highlight from 'highlight.js';
 import { styled } from 'frontity';
 import React, { useEffect, useRef } from 'react';
 
+highlight.configure( {
+	tabReplace: '  ', // 4 spaces
+} );
+
 const HighlitedCode = ( { children, lang } ) => {
 	const codeRef = useRef( null );
 	useEffect( () => {
-		highlight.configure( {
-			tabReplace: '  ', // 4 spaces
-		} );
 		highlight.highlightBlock( codeRef.current );
 	} );
 	const content =

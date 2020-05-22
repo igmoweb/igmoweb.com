@@ -1,6 +1,8 @@
-import HighlitedCode from './highlighted-code';
+// import HighlitedCode from './highlighted-code';
 import _get from 'lodash/get';
-import { css } from 'frontity';
+import { css, loadable } from 'frontity';
+
+const HighlitedCode = loadable( () => import( './highlighted-code' ) );
 
 const LANGS = {
 	plain: '',
