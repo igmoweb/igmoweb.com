@@ -1,28 +1,6 @@
-import ArchiveTitle from './archive-title';
-import List from './list';
-import Pagination from '../archive/pagination';
-import React from 'react';
-import { connect, loadable } from 'frontity';
+import Loading from '../common/loading';
+import { loadable } from 'frontity';
 
-const TopBanner = loadable( () => import( './top-banner' ) );
-
-const Archive = ( { state } ) => {
-	const data = state.source.get( state.router.link );
-
-	const { isHome, isSearch, items, page } = data;
-
-	const posts = items.map( ( { id, type } ) => {
-		return state.source[ type ][ id ];
-	} );
-
-	return (
-		<>
-			{ page === 1 && isHome && ! isSearch && <TopBanner /> }
-			<ArchiveTitle />
-			<List posts={ posts } />
-			<Pagination />
-		</>
-	);
-};
-
-export default connect( Archive );
+export default loadable( () => import( './archive' ), {
+	fallback: <Loading />,
+} );

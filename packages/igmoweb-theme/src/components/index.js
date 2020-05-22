@@ -1,7 +1,12 @@
+import Archive from './archive';
 import Footer from './footer';
 import Header from './header/header';
-import Main from './main';
+import Loading from './common/loading';
+import MaxWidth from './common/max-width';
+import PageError from './page-error';
 import React from 'react';
+import Single from './single';
+import Switch from '@frontity/components/switch';
 import Title from './title';
 import config from '../config';
 import { darken } from 'polished';
@@ -10,21 +15,12 @@ import { Global, Head, connect, styled } from 'frontity';
 
 const { colorPalette } = config;
 
-const StyledHeader = styled( Header )`
-	margin-bottom: 3rem;
-`;
-
-const StyledFooter = styled( Footer )`
-	background: ${darken( 0.03, colorPalette.black )};
-	margin-top: 5rem;
-`;
-
 /**
  * Theme is the root React component of our theme. The one we will export
  * in roots.
  */
 const Theme = ( { state } ) => {
-	// Get information about the current URL.
+	const data = state.source.get( state.router.link );
 	return (
 		<>
 			<Global styles={ globalStyles } />
@@ -51,10 +47,26 @@ const Theme = ( { state } ) => {
 				<html lang="es" />
 			</Head>
 			<StyledHeader />
-			<Main />
+			<MaxWidth>
+				<Switch>
+					<Loading when={ data.isFetching } />
+					<Archive when={ data.isArchive } />
+					<Single when={ data.isPostType } />
+					<PageError when={ data.isError || data.isAuthor } />
+				</Switch>
+			</MaxWidth>
 			<StyledFooter />
 		</>
 	);
 };
 
 export default connect( Theme );
+
+const StyledHeader = styled( Header )`
+	margin-bottom: 3rem;
+`;
+
+const StyledFooter = styled( Footer )`
+	background: ${darken( 0.03, colorPalette.black )};
+	margin-top: 5rem;
+`;
