@@ -55,5 +55,8 @@ const PostCategoriesList = styled.ul`
 		:first-of-type {
 			padding-left: 0;
 		}
+		&:not( :last-child ):after {
+			content: ' /';
+		}
 	}
 `;
