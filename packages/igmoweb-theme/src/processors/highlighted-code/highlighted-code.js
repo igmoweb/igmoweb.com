@@ -5,6 +5,9 @@ import React, { useEffect, useRef } from 'react';
 const HighlitedCode = ( { children, lang } ) => {
 	const codeRef = useRef( null );
 	useEffect( () => {
+		highlight.configure( {
+			tabReplace: '  ', // 4 spaces
+		} );
 		highlight.highlightBlock( codeRef.current );
 	} );
 	const content =

@@ -1,11 +1,6 @@
 import HighlitedCode from './highlighted-code';
 import _get from 'lodash/get';
 import { css } from 'frontity';
-import highlight from 'highlight.js';
-
-highlight.configure( {
-	tabReplace: '  ', // 4 spaces
-} );
 
 const LANGS = {
 	plain: '',
@@ -13,7 +8,7 @@ const LANGS = {
 };
 
 const mapWPLangs = ( lang ) => {
-	return typeof LANGS[ lang ] !== undefined ? LANGS[ lang ] : lang;
+	return typeof LANGS[ lang ] !== 'undefined' ? LANGS[ lang ] : lang;
 };
 
 export default {
