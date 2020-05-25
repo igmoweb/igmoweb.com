@@ -5,6 +5,7 @@ import codeStyles from './code';
 import colorsStyles from './colors';
 import columnsStyles from './columns';
 import { css } from 'frontity';
+import embedStyles from './embeds';
 import headingsStyles from './headings';
 import hljsStyles from 'highlight.js/styles/darcula.css';
 import mediaStyles from './media';
@@ -21,4 +22,5 @@ export default css( [
 	WPComCSS,
 	codeStyles,
 	hljsStyles,
+	embedStyles,
 ] );

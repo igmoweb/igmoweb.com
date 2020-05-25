@@ -31,10 +31,12 @@ export default css`
 	.wp-caption-text {
 		color: ${colorPalette.white};
 		display: block;
-		font-size: ${fontSizes.h4};
+		font-size: ${fontSizes.small};
 		font-weight: 500;
 		line-height: 1.2;
 		margin-top: 1.5rem;
+		text-align: center;
+		padding-top: 0.5rem;
 	}
 
 	figcaption a,
