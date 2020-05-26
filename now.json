@@ -2,6 +2,10 @@
 	"version": 2,
 	"builds": [
 		{
+			"src": "api/*.js",
+			"use": "@now/node"
+		},
+		{
 			"src": "package.json",
 			"use": "@frontity/now"
 		}
