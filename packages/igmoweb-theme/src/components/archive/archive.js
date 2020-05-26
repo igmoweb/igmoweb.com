@@ -1,4 +1,5 @@
 import ArchiveTitle from './archive-title';
+import CodeNav from '../header/code-nav';
 import List from './list';
 import Pagination from '../archive/pagination';
 import React from 'react';
@@ -18,6 +19,7 @@ const Archive = ( { state } ) => {
 	return (
 		<>
 			{ page === 1 && isHome && ! isSearch && <TopBanner /> }
+			{ isHome && ! isSearch && <CodeNav /> }
 			<ArchiveTitle />
 			<List posts={ posts } />
 			<Pagination />

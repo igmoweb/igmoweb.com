@@ -8,6 +8,7 @@ import { connect, styled } from 'frontity';
 
 const { colorPalette } = config;
 
+
 const FlexMaxWidth = styled( MaxWidth )`
 	display: flex;
 	justify-content: space-between;
