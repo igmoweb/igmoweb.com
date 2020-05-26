@@ -26,7 +26,7 @@
 		"@wordpress/components": "^9.5.0",
 		"@wordpress/date": "^3.9.0",
 		"eslint-config-wordpress": "^2.0.0",
-		"frontity": "^1.5.3",
+		"frontity": "^1.7.0",
 		"highlight.js": "^10.0.2",
 		"highlightjs-line-numbers.js": "^2.7.0",
 		"igmoweb-theme": "./packages/igmoweb-theme",

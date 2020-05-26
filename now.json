@@ -9,5 +9,23 @@
 			"src": "package.json",
 			"use": "@frontity/now"
 		}
+	],
+	"routes": [
+		{
+			"src": "/api/(.*)",
+			"headers": { "cache-control": "no-cache" },
+			"dest": "/api/$1.js"
+		},
+		{
+			"src": "/static/(.*)",
+			"headers": { "cache-control": "public,max-age=31536000,immutable" },
+			"dest": "/static/$1"
+		},
+		{ "src": "/favicon.ico", "dest": "favicon.ico" },
+		{
+			"src": "($|/.*)",
+			"headers": { "cache-control": "s-maxage=1,stale-while-revalidate" },
+			"dest": "/server.js"
+		}
 	]
 }
