@@ -1,6 +1,5 @@
 import React from 'react';
-import _get from 'lodash/get';
-import { Head, connect, decode } from 'frontity';
+import { Head, connect } from 'frontity';
 
 const socialCards = connect( ( { state } ) => {
 	const { socialCards, source } = state;
@@ -13,19 +12,19 @@ const socialCards = connect( ( { state } ) => {
 	let image = siteLogo || '';
 	if ( isPostType ) {
 		const post = source[ type ][ id ];
-		title = _get( post, 'title.rendered', '' );
-		description = _get( post, 'excerpt.rendered', '' );
+		title = post?.title?.rendered || '';
+		description = post?.excerpt?.rendered || '';
 		const mediaId = post.featured_media || '';
 		const media = state?.source?.attachment[ mediaId ] || '';
-		image = media.media_details.sizes.thumbnail
-			? media.media_details.sizes.thumbnail.source_url
-			: media.source_url;
+		/* eslint-disable camelcase */
+		image = media?.media_details?.sizes?.thumbnail
+			? media?.media_details?.sizes?.thumbnail?.source_url
+			: media?.source_url;
+		/* eslint-enable */
 	} else {
 		title = state?.frontity?.title || '';
 		description = state?.frontity?.description || '';
 	}
-
-	console.log( title );
 
 	return (
 		<>
