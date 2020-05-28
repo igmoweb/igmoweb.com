@@ -28,11 +28,11 @@ const socialCards = connect( ( { state } ) => {
 			<Head>
 				<meta content="summary" name="twitter:card" />
 				{ title !== '' && (
-					<meta content={ decode( title ) } name="twitter:title" />
+					<meta content={ title } name="twitter:title" />
 				) }
 				{ description !== '' && (
 					<meta
-						content={ decode( description ) }
+						content={ description }
 						name="twitter:description"
 					/>
 				) }
