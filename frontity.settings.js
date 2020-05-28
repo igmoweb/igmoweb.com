@@ -36,5 +36,6 @@ export default {
 		},
 		'@frontity/tiny-router',
 		'@frontity/html2react',
+		'frontity-social-previews',
 	],
 };

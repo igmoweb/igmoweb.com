@@ -1,0 +1,10 @@
+{
+  "name": "frontity-social-previews",
+  "version": "1.0.0",
+  "description": "A Frontity package to display page previews in social networks",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ignacio Cruz <igmoweb@gmail.com>",
+  "license": "ISC"
+}
