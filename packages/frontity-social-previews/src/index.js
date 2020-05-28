@@ -5,23 +5,27 @@ import { Head, connect, decode } from 'frontity';
 const socialCards = connect( ( { state } ) => {
 	const { socialCards, source } = state;
 	const { siteLogo } = socialCards;
-	console.log( siteLogo );
 	const data = source.get( state.router.link );
 	const { id, isPostType, type } = data;
 
 	let description = '';
 	let title = '';
+	let image = siteLogo || '';
 	if ( isPostType ) {
-		title = _get( source, `[${ type }][${ id }].title.rendered`, '' );
-		description = _get(
-			source,
-			`[${ type }][${ id }].excerpt.rendered`,
-			''
-		);
+		const post = source[ type ][ id ];
+		title = _get( post, `.title.rendered`, '' );
+		description = _get( post, `.excerpt.rendered`, '' );
+		const mediaId = post.featured_media || '';
+		const media = state?.source?.attachment[ mediaId ] || '';
+		image = media.media_details.sizes.thumbnail
+			? media.media_details.sizes.thumbnail.source_url
+			: media.source_url;
 	} else {
 		title = state?.frontity?.title || '';
 		description = state?.frontity?.description || '';
 	}
+	
+	console.log( title );
 
 	return (
 		<>
@@ -31,10 +35,10 @@ const socialCards = connect( ( { state } ) => {
 					<meta content={ title } name="twitter:title" />
 				) }
 				{ description !== '' && (
-					<meta
-						content={ description }
-						name="twitter:description"
-					/>
+					<meta content={ description } name="twitter:description" />
+				) }
+				{ description !== '' && (
+					<meta content={ image } name="twitter:image" />
 				) }
 			</Head>
 		</>
