@@ -18,6 +18,10 @@ export default {
 						[ 'Sobre mí', '/sobre-mi' ],
 						[ 'Contacto', '/contacto' ],
 					],
+					codeMenu: [
+						[ 'What is Code', '/category/what-is-code' ],
+						[ "Please don't code", '/category/please-dont-code/' ],
+					],
 					featured: {
 						showOnList: true,
 						showOnPost: false,
