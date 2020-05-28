@@ -9,7 +9,7 @@ const socialCards = connect( ( { state } ) => {
 
 	let description = '';
 	let title = '';
-	let image = siteLogo || '';
+	let image = '';
 	if ( isPostType ) {
 		const post = source[ type ][ id ];
 		title = post?.title?.rendered || '';
@@ -25,6 +25,8 @@ const socialCards = connect( ( { state } ) => {
 		title = state?.frontity?.title || '';
 		description = state?.frontity?.description || '';
 	}
+
+	image = image || siteLogo || '';
 
 	return (
 		<>
