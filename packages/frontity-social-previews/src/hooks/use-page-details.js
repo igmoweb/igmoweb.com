@@ -1,9 +1,9 @@
 import { decode } from 'frontity';
 
 const usePageDetails = ( state ) => {
-	const { socialCards, source } = state;
+	const { frontity, socialCards, router, source } = state;
 	const { siteLogo } = socialCards;
-	const data = source.get( state.router.link );
+	const data = source.get( router.link );
 	const { id, isPostType, isTaxonomy, taxonomy, type } = data;
 
 	let description = '';
@@ -42,6 +42,7 @@ const usePageDetails = ( state ) => {
 		title,
 		description,
 		image: image || siteLogo || '',
+		currentUrl: `${ frontity.url }${ router.link }`,
 	};
 };
 

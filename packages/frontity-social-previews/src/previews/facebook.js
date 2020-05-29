@@ -3,13 +3,13 @@ import usePageDetails from '../hooks/use-page-details';
 import { Head, connect } from 'frontity';
 
 const Facebook = ( { state } ) => {
-	const { description, image, title } = usePageDetails( state );
+	const { currentUrl, description, image, title } = usePageDetails( state );
 	const { socialCards } = state;
 	const { facebook } = socialCards;
 	return (
 		<Head>
-			<meta content={ location.href } property="og:url" />
-			<meta content={ location.href } property="og:type" />
+			<meta content={ currentUrl } property="og:url" />
+			<meta content="website" property="og:type" />
 			{ title !== '' && <meta content={ title } name="og:title" /> }
 			{ description !== '' && (
 				<meta content={ description } name="og:description" />
