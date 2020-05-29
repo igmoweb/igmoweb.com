@@ -40,6 +40,17 @@ export default {
 		},
 		'@frontity/tiny-router',
 		'@frontity/html2react',
-		'frontity-social-previews',
+		{
+			name: 'frontity-social-previews',
+			state: {
+				socialPreviews: {
+					siteLogo:
+						'https://igmoweb.files.wordpress.com/2020/05/bug.png',
+					twitter: {
+						creator: 'igmoweb',
+					},
+				},
+			},
+		},
 	],
 };
