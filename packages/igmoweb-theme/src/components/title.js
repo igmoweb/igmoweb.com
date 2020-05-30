@@ -5,7 +5,7 @@ const Title = ( { state } ) => {
 	// Get data about the current URL.
 	const data = state.source.get( state.router.link );
 	// Set the default title.
-	let title = state.frontity.title;
+	let title = `${ state.frontity.title } - ${ state.frontity.description }`;
 
 	if ( data.isTaxonomy ) {
 		// Add titles to taxonomies, like "Category: Nature - Blog Name" or "Tag: Japan - Blog Name".
