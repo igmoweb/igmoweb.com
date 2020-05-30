@@ -5,6 +5,7 @@ import Loading from './common/loading';
 import MaxWidth from './common/max-width';
 import PageError from './page-error';
 import React from 'react';
+import ReactGA from 'react-ga';
 import Single from './single';
 import Switch from '@frontity/components/switch';
 import Title from './title';
@@ -21,6 +22,8 @@ const { colorPalette } = config;
  */
 const Theme = ( { state } ) => {
 	const data = state.source.get( state.router.link );
+	ReactGA.initialize( 'UA-168045737-1' );
+	ReactGA.pageview( state.router.link );
 	return (
 		<>
 			<Global styles={ globalStyles } />
