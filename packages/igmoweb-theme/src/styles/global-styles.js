@@ -161,6 +161,7 @@ const base = css`
 	b,
 	strong {
 		font-weight: 800;
+		color: ${colorPalette.veryWhite};
 	}
 
 	ins {
