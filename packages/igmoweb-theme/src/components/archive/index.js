@@ -20,6 +20,8 @@ const Archive = ( { state } ) => {
 			{ isTaxonomy && <ArchiveTitle /> }
 			<List posts={ posts } />
 			<Pagination />
+
+			
 		</>
 	);
 };
