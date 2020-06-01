@@ -41,6 +41,8 @@ const Title = ( { state } ) => {
 		<Head>
 			<title>{ title }</title>
 		</Head>
+
+		
 	);
 };
 
