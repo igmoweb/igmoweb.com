@@ -1,4 +1,5 @@
 import Archive from './archive';
+import FontFace from './font-face';
 import Footer from './footer';
 import Header from './header/header';
 import Loading from './common/loading';
@@ -26,13 +27,10 @@ const Theme = ( { state } ) => {
 	ReactGA.pageview( state.router.link );
 	return (
 		<>
+			<FontFace />
 			<Global styles={ globalStyles } />
 			<Title />
 			<Head>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-					rel="stylesheet"
-				/>
 				<meta
 					content={ state.frontity.description }
 					name="description"
