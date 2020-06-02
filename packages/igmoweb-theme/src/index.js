@@ -36,6 +36,11 @@ const marsTheme = {
 			toggleTopBanner: ( { state } ) => {
 				state.theme.isTopBannerActive = ! state.theme.isTopBannerActive;
 			},
+			beforeSSR: async ( { actions, state } ) => {
+				if ( state.router.link === '/' ) {
+					await actions.source.fetch( state.theme.topBannerPage );
+				}
+			},
 		},
 	},
 	libraries: {
