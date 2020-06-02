@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global, css } from 'frontity';
-
 import RobotoRegular from '../assets/fonts/RobotoMono-Regular.woff2';
+import { Global, css } from 'frontity';
 
 const FontFace = () => (
 	<Global
