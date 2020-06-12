@@ -10,6 +10,7 @@ import headingsStyles from './headings';
 import hljsStyles from 'highlight.js/styles/darcula.css';
 import mediaStyles from './media';
 import quoteStyles from './quote';
+import tableStyles from './table';
 
 export default css( [
 	alignStyles,
@@ -23,4 +24,5 @@ export default css( [
 	codeStyles,
 	hljsStyles,
 	embedStyles,
+	tableStyles,
 ] );
