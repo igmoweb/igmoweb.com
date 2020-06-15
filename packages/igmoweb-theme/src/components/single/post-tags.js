@@ -17,8 +17,10 @@ export default connect( ( { post, state } ) => {
 
 	const allTags = source.tag;
 	const postTags =
-		post.tags && post.tags.map( ( tagId ) => allTags[ tagId ] );
-
+		post.tags &&
+		post.tags
+			.map( ( tagId ) => allTags[ tagId ] )
+			.filter( ( tag ) => tag !== undefined );
 	return (
 		<TagsList>
 			{ postTags.map( ( { id, link, name } ) => {
