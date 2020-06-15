@@ -17,7 +17,23 @@ export default connect( ( { post, state } ) => {
 
 	const allTags = source.tag;
 	const postTags =
-		post.tags && post.tags.map( ( tagId ) => allTags[ tagId ] );
+		post.tags &&
+		post.tags.map( ( tagId ) => {
+			// I need these here so I can easily see their values in Chrome without opening the scope tab.
+			const _source = source;
+			const _tags = source.tag;
+			const _postTags = post.tags;
+			console.log( `ignacio - checking tagId: ${ tagId }` );
+			console.log( 'ignacio - allTags[ tagId ]', allTags[ tagId ] );
+			if ( allTags[ tagId ] === undefined ) {
+				console.log(
+					`ignacio - the tagId ${ tagId } doesn't exist in the allTags list.`
+				);
+				debugger;
+			}
+
+			return allTags[ tagId ];
+		} );
 
 	return (
 		<TagsList>
