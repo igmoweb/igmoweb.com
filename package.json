@@ -27,7 +27,7 @@
 		"eslint-config-wordpress": "^2.0.0",
 		"frontity": "^1.8.0",
 		"frontity-social-previews": "^1.0.1",
-		"highlight.js": "^10.1.0",
+		"highlight.js": "^10.1.1",
 		"highlightjs-line-numbers.js": "^2.8.0",
 		"igmoweb-theme": "./packages/igmoweb-theme",
 		"lodash": "^4.17.15",
