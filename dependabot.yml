@@ -7,3 +7,11 @@ updates:
     # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "weekly"
+
+  # Enable version updates for npm (theme)
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/packages/igmoweb-theme"
+    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "weekly"
