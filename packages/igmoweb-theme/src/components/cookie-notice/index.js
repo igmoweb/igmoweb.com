@@ -21,6 +21,10 @@ const CookieNotice = () => {
 			},
 			theme: 'classic',
 			content: {
+				message:
+					'Si continúas navegando por esta web, entendemos que aceptas las cookies que usamos para mejorar nuestros servicios.',
+				dismiss: 'Vale',
+				link: 'Me interesa un montón, leer más',
 				href: 'https://igmoweb.com/cookies',
 			},
 		} );
