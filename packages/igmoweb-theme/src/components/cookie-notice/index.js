@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 const CookieNotice = () => {
-	const { initialize, isInitialized } = useState( false );
 	useEffect( () => {
 		const cookieconsent = window.cookieconsent || false;
 		if ( ! cookieconsent ) {
@@ -19,7 +18,6 @@ const CookieNotice = () => {
 					text: '#1d1d26',
 				},
 			},
-			theme: 'classic',
 			content: {
 				href: 'https://igmoweb.com/cookies',
 			},
