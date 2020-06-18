@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 const CookieNotice = () => {
-	const { initialize, isInitialized } = useState( false );
+	const { isInitialized, setInitialized } = useState( false );
 	useEffect( () => {
 		const cookieconsent = window.cookieconsent || false;
-		if ( ! cookieconsent ) {
+		if ( ! cookieconsent || isInitialized ) {
 			return;
 		}
 
@@ -24,6 +24,8 @@ const CookieNotice = () => {
 				href: 'https://igmoweb.com/cookies',
 			},
 		} );
+
+		setInitialized( true );
 	} );
 	return (
 		<script
