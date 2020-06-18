@@ -14,6 +14,7 @@ import config from '../config';
 import { darken } from 'polished';
 import { globalStyles } from '../styles';
 import { Global, Head, connect, styled } from 'frontity';
+import CookieNotice from './cookie-notice'
 
 const { colorPalette } = config;
 
@@ -45,6 +46,11 @@ const Theme = ( { state } ) => {
 					content="2Mxtpz_D7zcbzwE1_zvXiihh9chlWkdK-oiBqlrv3HE"
 					name="google-site-verification"
 				/>
+				<link
+					href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+					rel="stylesheet"
+					type="text/css"
+				/>
 				<html lang="es" />
 			</Head>
 			<StyledHeader />
@@ -57,6 +63,7 @@ const Theme = ( { state } ) => {
 				</Switch>
 			</MaxWidth>
 			<StyledFooter />
+			<CookieNotice />
 		</>
 	);
 };
