@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const CookieNotice = () => {
-	const { isInitialized, setInitialized } = useState( false );
+	const [ isInitialized, setInitialized ] = useState( false );
 	useEffect( () => {
 		const cookieconsent = window.cookieconsent || false;
 		if ( ! cookieconsent || isInitialized ) {
