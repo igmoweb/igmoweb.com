@@ -63,6 +63,8 @@ const StyledArticle = styled.article`
 	}
 `;
 
+
+
 const StyledHeader = styled.header`
 	display: none;
 	width: 70px;
