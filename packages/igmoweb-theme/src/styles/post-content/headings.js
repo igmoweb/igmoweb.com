@@ -8,5 +8,9 @@ export default css`
 	h5,
 	h6 {
 		margin-top: 3.5rem;
+		img {
+		  display: inline-block;
+      margin: 0 10px 0 0;
+		}
 	}
 `;
