@@ -27,7 +27,7 @@ const Pagination = ( { actions, state } ) => {
 		<StyledPagination>
 			{ next && (
 				<PageLink css={ { textAlign: 'left' } } link={ next }>
-					← En episodios anteriores
+					&lt;- En episodios anteriores
 				</PageLink>
 			) }
 
@@ -35,7 +35,7 @@ const Pagination = ( { actions, state } ) => {
 
 			{ previous && (
 				<PageLink css={ { textAlign: 'right' } } link={ previous }>
-					En el próximo capítulo →
+					En el próximo capítulo &gt;
 				</PageLink>
 			) }
 		</StyledPagination>

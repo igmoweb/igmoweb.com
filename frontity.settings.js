@@ -18,6 +18,10 @@ export default {
 						[ 'Sobre mí', '/sobre-mi' ],
 						[ 'Contacto', '/contacto' ],
 					],
+					codeMenu: [
+						[ 'What is Code', '/category/what-is-code' ],
+						[ "Please don't code", '/category/please-dont-code/' ],
+					],
 					featured: {
 						showOnList: true,
 						showOnPost: false,
@@ -36,5 +40,17 @@ export default {
 		},
 		'@frontity/tiny-router',
 		'@frontity/html2react',
+		{
+			name: 'frontity-social-previews',
+			state: {
+				socialPreviews: {
+					siteLogo:
+						'https://igmoweb.files.wordpress.com/2020/05/bug.png',
+					twitter: {
+						creator: 'igmoweb',
+					},
+				},
+			},
+		},
 	],
 };

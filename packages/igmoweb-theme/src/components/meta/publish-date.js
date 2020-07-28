@@ -1,5 +1,4 @@
 import config from '../../config';
-import { dateI18n } from '@wordpress/date';
 import { styled } from 'frontity';
 
 const { fontSizes } = config;
@@ -10,9 +9,10 @@ const Container = styled.div`
 
 const PublishDate = ( { postDate } ) => {
 	const date = new Date( postDate );
+	const options = { year: 'numeric', month: 'short', day: 'numeric' };
 	return (
 		<Container className="publish-date">
-			{ dateI18n( 'd M, Y', date.getTime() ) }
+			{ date.toLocaleDateString( 'es-ES', options ) }
 		</Container>
 	);
 };

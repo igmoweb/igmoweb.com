@@ -5,6 +5,7 @@ const colorPalette = {
 	cuaternary: '#90A3FA',
 	black: '#1D1D26',
 	white: '#d0d0d9',
+	veryWhite: '#ffffff',
 	greyLight: '#A8A8A8',
 	greyDark: '#434343',
 };

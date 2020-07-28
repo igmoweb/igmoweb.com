@@ -55,9 +55,9 @@ const SocialIconLink = styled( Link )`
 `;
 
 const StyledFontAwesomeIcon = styled( FontAwesomeIcon )`
-	font-size: 1em;
+	font-size: 16px;
 	${mq( 'medium' )} {
-		font-size: 2em;
+		font-size: 22px;
 	}
 `;
 
