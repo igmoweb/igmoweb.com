@@ -34,6 +34,7 @@ module.exports = ( req, res ) => {
 			rss.item( {
 				title: post.title.rendered,
 				url: post.url,
+				guid: post.url,
 				description: post.content.rendered,
 				date: post.date,
 				image_url: _get( post, '_embedded[wp:featuredmedia][0].media_details.sizes[thumbnail].source_url', '' ),
