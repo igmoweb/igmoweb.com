@@ -12,11 +12,11 @@ const StyledMaxWidth = styled( MaxWidth )`
 	align-items: baseline;
 `;
 
-const Footer = ( { className } ) => {
+const Footer = ( { className, state } ) => {
 	return (
 		<div className={ className } id="footer">
 			<StyledMaxWidth>
-				<NoDecoratedLink link="https://igmoweb.wordpress.com/feed/">
+				<NoDecoratedLink link={ state.frontity.feed }>
 					RSS
 				</NoDecoratedLink>
 				<SocialMenu />

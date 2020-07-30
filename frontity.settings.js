@@ -5,6 +5,7 @@ export default {
 			url: 'https://igmoweb.com',
 			title: 'A mí me funciona',
 			description: 'El blog de Ignacio Cruz',
+			feed: 'https://igmoweb.com/api/rss',
 		},
 	},
 	packages: [

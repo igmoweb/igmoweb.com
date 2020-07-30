@@ -37,7 +37,7 @@ const Theme = ( { state } ) => {
 					name="description"
 				/>
 				<link
-					href="https://igmoweb.com/api/rss"
+					href={ state.frontity.feed }
 					rel="alternate"
 					title="Ignacio Cruz Moreno » Feed"
 					type="application/rss+xml"
