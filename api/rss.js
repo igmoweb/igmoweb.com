@@ -21,14 +21,12 @@ module.exports = ( req, res ) => {
 		response.data.forEach( ( post ) => {
 			rss.item( {
 				title: post.title.rendered,
-				guid: post.guid.rendered,
 				url: post.url,
 				description: post.content.rendered,
 				date: post.date,
 			} );
 		} );
 
-		console.log( rss.xml() );
 		res.send( rss.xml() );
 	} );
 };

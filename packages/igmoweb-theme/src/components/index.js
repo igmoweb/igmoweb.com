@@ -37,7 +37,7 @@ const Theme = ( { state } ) => {
 					name="description"
 				/>
 				<link
-					href="https://igmoweb.wordpress.com/feed/"
+					href="https://igmoweb.com/api/rss"
 					rel="alternate"
 					title="Ignacio Cruz Moreno » Feed"
 					type="application/rss+xml"
