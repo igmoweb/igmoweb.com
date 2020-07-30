@@ -31,11 +31,13 @@ module.exports = ( req, res ) => {
 				];
 			}, [] );
 
+			const content = `${post.excerpt.rendered} <br/><br/> <a href="${post.link}">Seguir leyendo</a>`
+
 			rss.item( {
 				title: post.title.rendered,
-				url: post.url,
-				guid: post.url,
-				description: post.content.rendered,
+				url: post.link,
+				guid: post.link,
+				description: content,
 				date: post.date,
 				image_url: _get( post, '_embedded[wp:featuredmedia][0].media_details.sizes[thumbnail].source_url', '' ),
 				categories,
