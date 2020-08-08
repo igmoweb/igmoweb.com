@@ -35,7 +35,7 @@
 		"igmoweb-theme": "./packages/igmoweb-theme",
 		"lodash": "^4.17.19",
 		"polished": "^3.6.5",
-		"prismjs": "^1.20.0",
+		"prismjs": "^1.21.0",
 		"react-ga": "^3.1.2",
 		"react-share": "^4.2.1",
 		"rss": "^1.2.2"
