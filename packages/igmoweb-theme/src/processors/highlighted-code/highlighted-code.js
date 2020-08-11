@@ -31,4 +31,6 @@ const CodeContainer = styled.code`
 	font-weight: 800;
 	border: 1px solid #111;
 	border-radius: 0.2rem;
+	word-break: normal;
+			word-wrap: normal;
 `;

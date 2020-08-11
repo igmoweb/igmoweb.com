@@ -61,6 +61,9 @@ export default {
 			font-size: 0.9rem;
 			border-radius: 0.2rem;
 			font-weight: 800;
+			white-space: pre;
+			word-break: normal;
+			word-wrap: normal;
 		`;
 
 		return node;

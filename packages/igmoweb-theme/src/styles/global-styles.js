@@ -81,8 +81,6 @@ const base = css`
 	*::after {
 		box-sizing: inherit;
 		-webkit-font-smoothing: antialiased;
-		word-break: break-word;
-		word-wrap: break-word;
 	}
 
 	h1,
