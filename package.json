@@ -30,7 +30,7 @@
 		"feed": "^4.2.1",
 		"frontity": "^1.10.0",
 		"frontity-social-previews": "^1.0.1",
-		"highlight.js": "^10.1.1",
+		"highlight.js": "^10.1.2",
 		"highlightjs-line-numbers.js": "^2.8.0",
 		"igmoweb-theme": "./packages/igmoweb-theme",
 		"lodash": "^4.17.19",
