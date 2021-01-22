@@ -7,6 +7,7 @@
 		"frontity"
 	],
 	"scripts": {
+		"postinstall": "npm install --prefix ./packages/igmoweb-theme",
 		"dev": "frontity dev",
 		"dev:vercel": "vercel dev",
 		"build": "frontity build",
