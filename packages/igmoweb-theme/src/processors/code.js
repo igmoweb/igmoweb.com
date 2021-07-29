@@ -8,11 +8,7 @@ export default {
 			return false;
 		}
 
-		if ( parent?.component === 'pre' ) {
-			return false;
-		}
-
-		return true;
+		return parent?.component !== 'pre';
 	},
 	processor: ( { node } ) => {
 		node.props.css = css`

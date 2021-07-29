@@ -1,11 +1,10 @@
-import { NoDecoratedLink } from '../common/link';
-import React from 'react';
+import IgmowebLink from '../common/link';
 import _get from 'lodash/get';
-import { mq } from '../../styles';
 import { connect, decode, styled } from 'frontity';
 
 export default connect( ( { post, state } ) => {
 	const { source } = state;
+	const { categories } = post;
 	const allCategories = source.category;
 
 	if ( 0 === _get( post, 'categories', [] ).length ) {
@@ -13,12 +12,11 @@ export default connect( ( { post, state } ) => {
 	}
 
 	const postCategories =
-		post.categories &&
-		post.categories.map( ( catId ) => allCategories[ catId ] );
+		categories && categories.map( ( catId ) => allCategories[ catId ] );
 
 	return (
 		postCategories && (
-			<PostCategoriesList className="post-categories">
+			<ul className="post-categories">
 				{ postCategories.map( ( category ) => {
 					if ( ! category ) {
 						return null;
@@ -28,35 +26,13 @@ export default connect( ( { post, state } ) => {
 
 					return (
 						<li key={ id }>
-							<NoDecoratedLink key={ id } link={ link }>
+							<IgmowebLink key={ id } link={ link }>
 								{ decode( name ) }
-							</NoDecoratedLink>
+							</IgmowebLink>
 						</li>
 					);
 				} ) }
-			</PostCategoriesList>
+			</ul>
 		)
 	);
 } );
-
-const PostCategoriesList = styled.ul`
-	list-style: none;
-	display: flex;
-	margin-left: 0;
-	margin-bottom: 0;
-	padding-left: 0;
-
-	${mq( 'medium' )} {
-		padding-left: 0.5rem;
-	}
-	li {
-		margin: 0;
-		padding: 0 0.3rem;
-		:first-of-type {
-			padding-left: 0;
-		}
-		&:not( :last-child ):after {
-			content: ' /';
-		}
-	}
-`;

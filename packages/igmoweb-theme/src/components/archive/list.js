@@ -1,5 +1,4 @@
 import Post from './post';
-import React from 'react';
 
 const List = ( { posts } ) => {
 	if ( posts.length === 0 ) {

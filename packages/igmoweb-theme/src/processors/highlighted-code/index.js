@@ -1,4 +1,3 @@
-// import HighlitedCode from './highlighted-code';
 import _get from 'lodash/get';
 import { css, loadable } from 'frontity';
 
@@ -18,7 +17,7 @@ export default {
 	test: ( { node } ) => {
 		const { children, component, type } = node;
 		const firstChild = _get( children, '[0]' );
-		if (
+		return (
 			type === 'element' &&
 			component === 'pre' &&
 			// We are not interested on preformatted blocks
@@ -27,11 +26,7 @@ export default {
 			! (
 				firstChild.type === 'element' && firstChild.component === 'code'
 			)
-		) {
-			return true;
-		}
-
-		return false;
+		);
 	},
 	processor: ( { node } ) => {
 		const { children, props } = node;

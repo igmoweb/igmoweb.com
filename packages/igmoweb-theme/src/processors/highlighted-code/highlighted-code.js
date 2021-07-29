@@ -1,6 +1,6 @@
 import highlight from 'highlight.js';
 import { styled } from 'frontity';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 highlight.configure( {
 	tabReplace: '  ', // 4 spaces
@@ -32,5 +32,5 @@ const CodeContainer = styled.code`
 	border: 1px solid #111;
 	border-radius: 0.2rem;
 	word-break: normal;
-			word-wrap: normal;
+	word-wrap: normal;
 `;

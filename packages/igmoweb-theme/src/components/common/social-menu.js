@@ -1,9 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from './link';
-import config from '../../config';
-import { mq } from '../../styles';
-import screenReaderText from '../../styles/screen-reader';
-import { styled } from 'frontity';
+import IgmowebLink from './link';
 import {
 	faGithub,
 	faLinkedin,
@@ -11,57 +7,35 @@ import {
 	faWordpress,
 } from '@fortawesome/free-brands-svg-icons';
 
-const { colorPalette } = config;
-
 const SocialMenu = ( { className } ) => {
 	return (
-		<Container className={ className }>
+		<ul className={ className }>
 			<li>
-				<SocialIconLink link="https://github.com/igmoweb">
-					<span css={ screenReaderText }>GitHub</span>
-					<StyledFontAwesomeIcon icon={ faGithub } />
-				</SocialIconLink>
+				<IgmowebLink link="https://github.com/igmoweb">
+					<span>GitHub</span>
+					<FontAwesomeIcon icon={ faGithub } />
+				</IgmowebLink>
 			</li>
 			<li>
-				<SocialIconLink link="https://twitter.com/igmoweb">
-					<span css={ screenReaderText }>Twitter</span>
-					<StyledFontAwesomeIcon icon={ faTwitter } />
-				</SocialIconLink>
+				<IgmowebLink link="https://twitter.com/igmoweb">
+					<span>Twitter</span>
+					<FontAwesomeIcon icon={ faTwitter } />
+				</IgmowebLink>
 			</li>
 			<li>
-				<SocialIconLink link="https://www.linkedin.com/in/igmoweb/">
-					<span css={ screenReaderText }>LinkedIn</span>
-					<StyledFontAwesomeIcon icon={ faLinkedin } />
-				</SocialIconLink>
+				<IgmowebLink link="https://www.linkedin.com/in/igmoweb/">
+					<span>LinkedIn</span>
+					<FontAwesomeIcon icon={ faLinkedin } />
+				</IgmowebLink>
 			</li>
 			<li>
-				<SocialIconLink link="https://profiles.wordpress.org/igmoweb/">
-					<span css={ screenReaderText }>WordPress profile</span>
-					<StyledFontAwesomeIcon icon={ faWordpress } />
-				</SocialIconLink>
+				<IgmowebLink link="https://profiles.wordpress.org/igmoweb/">
+					<span>WordPress profile</span>
+					<FontAwesomeIcon icon={ faWordpress } />
+				</IgmowebLink>
 			</li>
-		</Container>
+		</ul>
 	);
 };
 
 export default SocialMenu;
-
-const SocialIconLink = styled( Link )`
-	color: inherit;
-	&:hover,
-	&:active {
-		color: ${colorPalette.primary};
-	}
-`;
-
-const StyledFontAwesomeIcon = styled( FontAwesomeIcon )`
-	font-size: 16px;
-	${mq( 'medium' )} {
-		font-size: 22px;
-	}
-`;
-
-const Container = styled.ul`
-	display: flex;
-	list-style: none;
-`;

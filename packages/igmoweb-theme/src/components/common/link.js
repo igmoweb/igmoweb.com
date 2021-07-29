@@ -1,21 +1,11 @@
-import React from 'react';
-import { connect, styled } from 'frontity';
+import Link from '@frontity/components/link';
+import { connect, useConnect } from 'frontity';
 
-const StyledAnchor = styled.a`
-	text-decoration: underline;
-	&:hover,
-	&:active {
-		text-decoration: underline;
-	}
-`;
+const IgmowebLink = ( { children, ...props } ) => {
+	const { actions } = useConnect();
 
-const Link = ( {
-	actions,
-	'aria-current': ariaCurrent,
-	children,
-	className,
-	link,
-} ) => {
+	const { link } = props;
+
 	const onClick = ( event ) => {
 		const isExternal = link.startsWith( 'http' );
 
@@ -43,22 +33,10 @@ const Link = ( {
 	};
 
 	return (
-		<StyledAnchor
-			aria-current={ ariaCurrent }
-			className={ className }
-			href={ link }
-			onClick={ onClick }
-			onMouseEnter={ onMouseEnter }
-		>
+		<Link { ...props } onClick={ onClick } onMouseEnter={ onMouseEnter }>
 			{ children }
-		</StyledAnchor>
+		</Link>
 	);
 };
 
-const ConnectedLink = connect( Link );
-
-export default ConnectedLink;
-
-export const NoDecoratedLink = styled( ConnectedLink )`
-	text-decoration: none;
-`;
+export default connect( IgmowebLink, { injectProps: false } );

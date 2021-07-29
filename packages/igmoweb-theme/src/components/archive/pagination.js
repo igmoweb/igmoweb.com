@@ -1,9 +1,6 @@
-import { NoDecoratedLink } from '../common/link';
-import config from '../../config';
-import React, { useEffect } from 'react';
-import { connect, styled } from 'frontity';
-
-const { fontSizes } = config;
+import IgmowebLink from '../common/link';
+import { connect } from 'frontity';
+import { useEffect } from 'react';
 
 /**
  * Pagination Component
@@ -24,21 +21,21 @@ const Pagination = ( { actions, state } ) => {
 	}, [] );
 
 	return (
-		<StyledPagination>
+		<div>
 			{ next && (
-				<PageLink css={ { textAlign: 'left' } } link={ next }>
+				<IgmowebLink css={ { textAlign: 'left' } } link={ next }>
 					&lt;- En episodios anteriores
-				</PageLink>
+				</IgmowebLink>
 			) }
 
 			{ previous && next && ' - ' }
 
 			{ previous && (
-				<PageLink css={ { textAlign: 'right' } } link={ previous }>
+				<IgmowebLink css={ { textAlign: 'right' } } link={ previous }>
 					En el próximo capítulo &gt;
-				</PageLink>
+				</IgmowebLink>
 			) }
-		</StyledPagination>
+		</div>
 	);
 };
 
@@ -47,15 +44,3 @@ const Pagination = ( { actions, state } ) => {
  * `state`, `actions`, `libraries` via props
  */
 export default connect( Pagination );
-
-const StyledPagination = styled.div`
-	display: flex;
-	> * {
-		flex-grow: 1;
-	}
-`;
-const PageLink = styled( NoDecoratedLink )`
-	display: inline-block;
-	margin-top: 16px;
-	font-size: ${fontSizes.small};
-`;

@@ -1,12 +1,6 @@
 import FeaturedMedia from '../common/featured-media';
-import { NoDecoratedLink } from '../common/link';
-import PublishDate from '../meta/publish-date';
-import React from 'react';
-import config from '../../config';
-import { mq } from '../../styles';
-import { styled } from 'frontity';
-
-const { colorPalette } = config;
+import IgmowebLink from '../common/link';
+import PublishDate from '../common/publish-date';
 
 /**
  * Item Component
@@ -20,68 +14,24 @@ const Post = ( { item } ) => {
 	const { date, featured_media: featuredMedia, link, title } = item;
 
 	return (
-		<StyledArticle>
-			<StyledHeader>
+		<article>
+			<header>
 				<FeaturedMedia id={ featuredMedia } size="thumbnail" />
-			</StyledHeader>
-			<Content>
-				<NoDecoratedLink className="post-title__link" link={ link }>
-					<Title
+			</header>
+			<div>
+				<IgmowebLink className="post-title__link" link={ link }>
+					<h2
 						dangerouslySetInnerHTML={ {
 							__html: title.rendered,
 						} }
 					/>
-				</NoDecoratedLink>
+				</IgmowebLink>
 
-				<StyledPublishDate postDate={ date } />
-			</Content>
-		</StyledArticle>
+				<PublishDate postDate={ date } />
+			</div>
+		</article>
 	);
 };
 
 // Connect the Item to gain access to `state` as a prop
 export default Post;
-
-const Title = styled.h2`
-	font-size: 1.1rem;
-	color: ${colorPalette.primary};
-	margin: 0;
-	box-sizing: border-box;
-`;
-
-const StyledPublishDate = styled( PublishDate )`
-	color: ${colorPalette.tertiary};
-`;
-
-const StyledArticle = styled.article`
-	padding-bottom: 2rem;
-	margin-bottom: 2rem;
-	border-bottom: 1px solid ${colorPalette.greyDark};
-	display: flex;
-	&:last-of-type {
-		border-bottom: none;
-	}
-`;
-
-const StyledHeader = styled.header`
-	display: none;
-	width: 70px;
-	height: 50px;
-	margin-right: 1.5rem;
-	img {
-		max-width: 100%;
-		inline-size: inherit;
-		max-height: 50px;
-		width: 50px;
-	}
-	${mq( 'medium' )} {
-		display: block;
-	}
-`;
-
-const Content = styled.div`
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-	justify-content: space-between;
-`;
