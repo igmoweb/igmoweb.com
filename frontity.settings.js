@@ -1,5 +1,5 @@
-export default {
-	name: 'igmoweb',
+const settings = {
+	name: 'igmoweb.com',
 	state: {
 		frontity: {
 			url: 'https://igmoweb.com',
@@ -11,24 +11,6 @@ export default {
 	packages: [
 		{
 			name: 'igmoweb-theme',
-			state: {
-				theme: {
-					topBannerPage: '/hola',
-					menu: [
-						[ 'Cursos', '/cursos' ],
-						[ 'Sobre mí', '/sobre-mi' ],
-						[ 'Contacto', '/contacto' ],
-					],
-					codeMenu: [
-						[ 'What is Code', '/category/what-is-code' ],
-						[ "Please don't code", '/category/please-dont-code/' ],
-					],
-					featured: {
-						showOnList: true,
-						showOnPost: false,
-					},
-				},
-			},
 		},
 		{
 			name: '@frontity/wp-source',
@@ -39,19 +21,17 @@ export default {
 				},
 			},
 		},
-		'@frontity/tiny-router',
-		'@frontity/html2react',
 		{
-			name: 'frontity-social-previews',
+			name: '@frontity/google-analytics',
 			state: {
-				socialPreviews: {
-					siteLogo:
-						'https://igmoweb.files.wordpress.com/2020/05/bug.png',
-					twitter: {
-						creator: 'igmoweb',
-					},
+				googleAnalytics: {
+					trackingId: 'UA-168045737-1',
 				},
 			},
 		},
+		'@frontity/tiny-router',
+		'@frontity/html2react',
 	],
 };
+
+export default settings;
