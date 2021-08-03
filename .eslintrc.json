@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"wordpress",
+		"plugin:@wordpress/eslint-plugin/recommended",
 		"plugin:react/recommended",
 		"plugin:prettier/recommended"
 	],
@@ -24,11 +24,15 @@
 				"memberSyntaxSortOrder": [ "all", "single", "multiple", "none" ]
 			}
 		],
-		"sort-destructure-keys/sort-destructure-keys": "error",
+//		"sort-destructure-keys/sort-destructure-keys": "error",
 		"yoda": 0
 	},
 	"parser": "babel-eslint",
-	"plugins": [ "react", "react-hooks", "sort-destructure-keys" ],
+	"plugins": [
+		"react",
+		"react-hooks"
+//		"sort-destructure-keys"
+	],
 	"env": {
 		"browser": true,
 		"commonjs": true,
