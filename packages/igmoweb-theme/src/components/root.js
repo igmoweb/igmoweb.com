@@ -7,7 +7,11 @@ import PageError from './page-error';
 import Single from './single';
 import Switch from '@frontity/components/switch';
 import Title from './head/title';
-import { Head, connect } from 'frontity';
+import { globalStyles } from '../styles';
+import { Global, Head, connect, styled } from 'frontity';
+import Container from './common/container';
+import { darken } from 'polished';
+import theme from '../styles/theme';
 
 const Root = ( { state } ) => {
 	const data = state.source.get( state.router.link );
@@ -26,6 +30,7 @@ const Root = ( { state } ) => {
 
 	return (
 		<>
+			<Global styles={ globalStyles } />
 			<Title />
 			<FontFace />
 			<Head>
@@ -50,17 +55,34 @@ const Root = ( { state } ) => {
 					type="text/css"
 				/>
 			</Head>
-			<Header />
-			{ displayTopBanner && <div>TOP BANNER</div> }
-			<Switch>
-				<Loading when={ isFetching } />
-				<Archive when={ isArchive } />
-				<Single when={ isPostType } />
-				<PageError when={ isError || isAuthor } />
-			</Switch>
-			<Footer />
+			<HeaderContainer>
+				<Header />
+			</HeaderContainer>
+			<Container>{ displayTopBanner && <div>TOP BANNER</div> }</Container>
+			<Container>
+				<Switch>
+					<Loading when={ isFetching } />
+					<Archive when={ isArchive } />
+					<Single when={ isPostType } />
+					<PageError when={ isError || isAuthor } />
+				</Switch>
+			</Container>
+			<FooterContainer>
+				<Container>
+					<Footer />
+				</Container>
+			</FooterContainer>
 		</>
 	);
 };
+
+const HeaderContainer = styled( Container )`
+	margin-bottom: 3rem;
+`;
+
+const FooterContainer = styled.div`
+	background: ${ darken( 0.03, theme.colorPalette.black ) };
+	margin-top: 5rem;
+`;
 
 export default connect( Root );

@@ -4,12 +4,6 @@ import { connect, styled } from 'frontity';
 
 const Container = styled.div``;
 
-const StyledImage = styled( Image )`
-	display: block;
-	height: auto;
-	width: 100%;
-`;
-
 const FeaturedMedia = ( { id, size = 'full', state } ) => {
 	const media = state.source.attachment[ id ];
 
@@ -42,5 +36,11 @@ const FeaturedMedia = ( { id, size = 'full', state } ) => {
 		</Container>
 	);
 };
+
+const StyledImage = styled( Image )`
+	display: block;
+	height: auto;
+	width: 100%;
+`;
 
 export default connect( FeaturedMedia );

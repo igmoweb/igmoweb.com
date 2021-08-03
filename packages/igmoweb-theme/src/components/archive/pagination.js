@@ -1,15 +1,8 @@
 import IgmowebLink from '../common/link';
-import { connect } from 'frontity';
+import theme from '../../styles/theme';
 import { useEffect } from 'react';
+import { connect, styled } from 'frontity';
 
-/**
- * Pagination Component
- *
- * It's used to allow the user to paginate between a list of posts.
- *
- * The `state`, `actions`, `libraries` props are provided by the global context,
- * when we wrap this component in `connect(...)`
- */
 const Pagination = ( { actions, state } ) => {
 	// Get the total posts to be displayed based for the current link
 	const { next, previous } = state.source.get( state.router.link );
@@ -21,23 +14,35 @@ const Pagination = ( { actions, state } ) => {
 	}, [] );
 
 	return (
-		<div>
+		<StyledPagination>
 			{ next && (
-				<IgmowebLink css={ { textAlign: 'left' } } link={ next }>
+				<PageLink css={ { textAlign: 'left' } } link={ next }>
 					&lt;- En episodios anteriores
-				</IgmowebLink>
+				</PageLink>
 			) }
 
 			{ previous && next && ' - ' }
 
 			{ previous && (
-				<IgmowebLink css={ { textAlign: 'right' } } link={ previous }>
+				<PageLink css={ { textAlign: 'right' } } link={ previous }>
 					En el próximo capítulo &gt;
-				</IgmowebLink>
+				</PageLink>
 			) }
-		</div>
+		</StyledPagination>
 	);
 };
+
+const StyledPagination = styled.div`
+	display: flex;
+	> * {
+		flex-grow: 1;
+	}
+`;
+const PageLink = styled( IgmowebLink )`
+	display: inline-block;
+	margin-top: 16px;
+	font-size: ${ theme.fontSizes.small };
+`;
 
 /**
  * Connect Pagination to global context to give it access to

@@ -1,5 +1,5 @@
 import Image from '@frontity/components/image';
-import { connect } from 'frontity';
+import { connect, styled } from 'frontity';
 
 const FeaturedMedia = ( { id, size = 'full', state } ) => {
 	const media = state.source.attachment[ id ];
@@ -27,7 +27,7 @@ const FeaturedMedia = ( { id, size = 'full', state } ) => {
 
 	return (
 		<div>
-			<Image
+			<StyledImage
 				alt={ media.title.rendered }
 				height={ mediaDetails?.height }
 				src={ src }
@@ -37,5 +37,11 @@ const FeaturedMedia = ( { id, size = 'full', state } ) => {
 		</div>
 	);
 };
+
+const StyledImage = styled( Image )`
+	display: block;
+	height: auto;
+	width: 100%;
+`;
 
 export default connect( FeaturedMedia );

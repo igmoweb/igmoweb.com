@@ -1,5 +1,6 @@
 import IgmowebLink from '../common/link';
 import _get from 'lodash/get';
+import { mq } from '../../styles';
 import { connect, decode, styled } from 'frontity';
 
 export default connect( ( { post, state } ) => {
@@ -16,7 +17,7 @@ export default connect( ( { post, state } ) => {
 
 	return (
 		postCategories && (
-			<ul className="post-categories">
+			<PostCategoriesList>
 				{ postCategories.map( ( category ) => {
 					if ( ! category ) {
 						return null;
@@ -26,13 +27,43 @@ export default connect( ( { post, state } ) => {
 
 					return (
 						<li key={ id }>
-							<IgmowebLink key={ id } link={ link }>
+							<Category key={ id } link={ link }>
 								{ decode( name ) }
-							</IgmowebLink>
+							</Category>
 						</li>
 					);
 				} ) }
-			</ul>
+			</PostCategoriesList>
 		)
 	);
 } );
+
+const PostCategoriesList = styled.ul`
+	list-style: none;
+	display: flex;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+
+	${ mq( 'medium' ) } {
+		padding-left: 0.5rem;
+	}
+	li {
+		margin: 0;
+		padding: 0 0.3rem;
+		:first-of-type {
+			padding-left: 0;
+		}
+		&:not( :last-child ):after {
+			content: ' /';
+		}
+	}
+`;
+
+const Category = styled( IgmowebLink )`
+	text-decoration: none;
+	&:hover,
+	&:active {
+		text-decoration: underline;
+	}
+`;

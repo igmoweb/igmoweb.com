@@ -4,10 +4,9 @@ import { Global, css } from 'frontity';
 const FontFace = () => (
 	<Global
 		styles={ css`
-			/* cyrillic-ext */
 			@font-face {
 				font-family: 'Roboto Mono';
-				src: url( ${ RobotoRegular } );
+				src: url( ${ RobotoRegular } ) format( 'woff2' );
 				font-style: normal;
 				font-weight: 400;
 				font-display: swap;

@@ -1,3 +1,6 @@
-import Single from './single';
+import Loading from '../common/loading';
+import { loadable } from 'frontity';
 
-export default Single;
+export default loadable( () => import( './single' ), {
+	fallback: <Loading />,
+} );

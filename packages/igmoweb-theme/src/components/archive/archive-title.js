@@ -1,4 +1,4 @@
-import { connect, decode } from 'frontity';
+import { connect, decode, styled } from 'frontity';
 
 const ArchiveTitle = ( { state } ) => {
 	const data = state.source.get( state.router.link );
@@ -19,9 +19,13 @@ const ArchiveTitle = ( { state } ) => {
 
 	return (
 		<div>
-			<h1>{ title }</h1>
+			<StyledArchiveTitle>{ title }</StyledArchiveTitle>
 		</div>
 	);
 };
+
+const StyledArchiveTitle = styled.h1`
+	margin-bottom: 4rem;
+`;
 
 export default connect( ArchiveTitle );

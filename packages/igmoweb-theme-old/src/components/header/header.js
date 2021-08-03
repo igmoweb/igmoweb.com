@@ -8,14 +8,13 @@ import { connect, styled } from 'frontity';
 
 const { colorPalette } = config;
 
-
 const FlexMaxWidth = styled( MaxWidth )`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 1.5rem 1.5rem 2rem 1.5rem;
 	flex-direction: column;
-	${mq( 'medium' )} {
+	${ mq( 'medium' ) } {
 		flex-direction: row;
 	}
 `;
@@ -26,14 +25,14 @@ const Container = styled.div`
 	justify-content: space-around;
 	width: 100%;
 	margin-bottom: 2rem;
-	${mq( 'medium' )} {
+	${ mq( 'medium' ) } {
 		margin-bottom: 0;
 		width: 50%;
 	}
 `;
 
 const Description = styled.div`
-	color: ${colorPalette.tertiary};
+	color: ${ colorPalette.secondary };
 	&:before {
 		content: ':~$ ';
 	}
