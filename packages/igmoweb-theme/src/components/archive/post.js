@@ -1,21 +1,10 @@
+import { mq } from '../../styles';
 import FeaturedMedia from '../common/featured-media';
 import IgmowebLink from '../common/link';
 import PublishDate from '../common/publish-date';
 import { styled } from 'frontity';
-import { mq } from '../../../../igmoweb-theme-old/src/styles';
 import theme from '../../styles/theme';
 
-/**
- * Item Component
- *
- * It renders the preview of a blog post. Each blog post contains
- * - Title: clickable title of the post
- * - Author: name of author and published date
- * - FeaturedMedia: the featured image/video of the post
- *
- * @param  root0
- * @param  root0.item
- */
 const Post = ( { item } ) => {
 	const { date, featured_media: featuredMedia, link, title } = item;
 
