@@ -3,7 +3,7 @@ const axios = require( 'axios' );
 const settings = require( '../frontity.settings' );
 const _get = require( 'lodash/get' );
 
-const rss = new RSS({
+const rss = new RSS( {
 	title: settings.default.state.frontity.title,
 	description: settings.default.state.frontity.description,
 	feed_url: 'https://igmoweb.com/api/rss',
@@ -11,7 +11,7 @@ const rss = new RSS({
 	image_url: 'https://igmoweb.files.wordpress.com/2020/05/bug.png',
 	language: 'es',
 	categories: [ 'Development', 'Software', 'WordPress', 'JavaScript' ],
-});
+} );
 
 module.exports = ( req, res ) => {
 	const url =
@@ -22,16 +22,18 @@ module.exports = ( req, res ) => {
 
 		response.data.forEach( ( post ) => {
 			const allTerms = _get( post, '_embedded[wp:term]' );
-			const categories = allTerms.reduce( (acc, taxonomyTerms) => {
+			const categories = allTerms.reduce( ( acc, taxonomyTerms ) => {
 				return [
 					...acc,
-					...taxonomyTerms.filter( term => term.taxonomy === 'category' ).map( ( term ) => {
-						return term.name;
-					})
+					...taxonomyTerms
+						.filter( ( term ) => term.taxonomy === 'category' )
+						.map( ( term ) => {
+							return term.name;
+						} ),
 				];
 			}, [] );
 
-			const content = `${post.excerpt.rendered} <br/><br/> <a href="${post.link}">Seguir leyendo</a>`
+			const content = `${ post.excerpt.rendered } <br/><br/> <a href="${ post.link }">Seguir leyendo</a>`;
 
 			rss.item( {
 				title: post.title.rendered,
@@ -39,7 +41,11 @@ module.exports = ( req, res ) => {
 				guid: post.link,
 				description: content,
 				date: post.date,
-				image_url: _get( post, '_embedded[wp:featuredmedia][0].media_details.sizes[thumbnail].source_url', '' ),
+				image_url: _get(
+					post,
+					'_embedded[wp:featuredmedia][0].media_details.sizes[thumbnail].source_url',
+					''
+				),
 				categories,
 			} );
 		} );
