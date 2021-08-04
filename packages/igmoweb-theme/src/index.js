@@ -11,13 +11,7 @@ export default {
 	},
 	state: {
 		theme: {
-			topBannerPage: '/hola',
 			autoPrefetch: 'hover',
-			menu: [
-				[ 'Cursos', '/cursos' ],
-				[ 'Sobre mí', '/sobre-mi' ],
-				[ 'Contacto', '/contacto' ],
-			],
 		},
 	},
 	actions: {

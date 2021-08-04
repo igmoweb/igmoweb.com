@@ -15,6 +15,22 @@ const settings = {
 		{
 			name: '@frontity/wp-source',
 			state: {
+				theme: {
+					topBannerPage: '/hola',
+					menu: [
+						[ 'Cursos', '/cursos' ],
+						[ 'Sobre mí', '/sobre-mi' ],
+						[ 'Contacto', '/contacto' ],
+					],
+					codeMenu: [
+						[ 'What is Code', '/category/what-is-code' ],
+						[ "Please don't code", '/category/please-dont-code/' ],
+					],
+					featured: {
+						showOnList: true,
+						showOnPost: false,
+					},
+				},
 				source: {
 					api:
 						'https://public-api.wordpress.com/wp/v2/sites/igmoweb.com',

@@ -28,7 +28,9 @@
     "igmoweb-theme": "file:packages/igmoweb-theme",
     "lodash": "^4.17.21",
     "polished": "^4.1.3",
+    "react-loader-spinner": "^4.0.0",
     "react-share": "^4.4.0",
+    "react-spinners": "^0.11.0",
     "rss": "^1.2.2"
   },
   "devDependencies": {
