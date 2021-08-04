@@ -21,6 +21,7 @@
 		"sort-imports": [
 			"error",
 			{
+				"ignoreDeclarationSort": true,
 				"memberSyntaxSortOrder": [ "all", "single", "multiple", "none" ]
 			}
 		],
