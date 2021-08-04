@@ -1,41 +1,64 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import IgmowebLink from './link';
+import theme from '../../styles/theme';
 import {
 	faGithub,
 	faLinkedin,
 	faTwitter,
 	faWordpress,
 } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { styled } from 'frontity';
+import { mq, screenReaderText } from '../../styles';
 
 const SocialMenu = ( { className } ) => {
 	return (
-		<ul className={ className }>
+		<Container className={ className }>
 			<li>
-				<IgmowebLink link="https://github.com/igmoweb">
-					<span>GitHub</span>
-					<FontAwesomeIcon icon={ faGithub } />
-				</IgmowebLink>
+				<SocialIconLink link="https://github.com/igmoweb">
+					<span css={ screenReaderText }>GitHub</span>
+					<StyledFontAwesomeIcon icon={ faGithub } />
+				</SocialIconLink>
 			</li>
 			<li>
-				<IgmowebLink link="https://twitter.com/igmoweb">
-					<span>Twitter</span>
-					<FontAwesomeIcon icon={ faTwitter } />
-				</IgmowebLink>
+				<SocialIconLink link="https://twitter.com/igmoweb">
+					<span css={ screenReaderText }>Twitter</span>
+					<StyledFontAwesomeIcon icon={ faTwitter } />
+				</SocialIconLink>
 			</li>
 			<li>
-				<IgmowebLink link="https://www.linkedin.com/in/igmoweb/">
-					<span>LinkedIn</span>
-					<FontAwesomeIcon icon={ faLinkedin } />
-				</IgmowebLink>
+				<SocialIconLink link="https://www.linkedin.com/in/igmoweb/">
+					<span css={ screenReaderText }>LinkedIn</span>
+					<StyledFontAwesomeIcon icon={ faLinkedin } />
+				</SocialIconLink>
 			</li>
 			<li>
-				<IgmowebLink link="https://profiles.wordpress.org/igmoweb/">
-					<span>WordPress profile</span>
-					<FontAwesomeIcon icon={ faWordpress } />
-				</IgmowebLink>
+				<SocialIconLink link="https://profiles.wordpress.org/igmoweb/">
+					<span css={ screenReaderText }>WordPress profile</span>
+					<StyledFontAwesomeIcon icon={ faWordpress } />
+				</SocialIconLink>
 			</li>
-		</ul>
+		</Container>
 	);
 };
+
+const SocialIconLink = styled( IgmowebLink )`
+	color: inherit;
+	&:hover,
+	&:active {
+		color: ${ theme.colorPalette.primary };
+	}
+`;
+
+const StyledFontAwesomeIcon = styled( FontAwesomeIcon )`
+	font-size: 16px;
+	${ mq( 'medium' ) } {
+		font-size: 22px;
+	}
+`;
+
+const Container = styled.ul`
+	display: flex;
+	list-style: none;
+`;
 
 export default SocialMenu;

@@ -2,7 +2,7 @@ import ArticleHeader from './article-header';
 import PostContent from './post-content';
 import PostMeta from './post-meta';
 import PostTags from './post-tags';
-import { connect } from 'frontity';
+import { connect, styled } from 'frontity';
 import { useEffect } from 'react';
 
 const Single = ( { actions, state } ) => {
@@ -29,13 +29,19 @@ const Single = ( { actions, state } ) => {
 	const { content, type: postType } = post;
 
 	return (
-		<article>
+		<Article>
 			<ArticleHeader post={ post } />
 			{ 'post' === postType && <PostMeta post={ post } /> }
 			<PostTags post={ post } />
 			<PostContent content={ content.rendered } />
-		</article>
+		</Article>
 	);
 };
+
+const Article = styled.article`
+	> * {
+		margin-bottom: 1.3rem;
+	}
+`;
 
 export default connect( Single );

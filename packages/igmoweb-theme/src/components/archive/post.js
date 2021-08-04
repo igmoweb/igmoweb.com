@@ -48,6 +48,7 @@ const Title = styled.h2`
 
 const StyledPublishDate = styled( PublishDate )`
 	color: ${ theme.colorPalette.tertiary };
+	font-size: ${ theme.fontSizes.xsmall };
 `;
 
 const StyledArticle = styled.article`

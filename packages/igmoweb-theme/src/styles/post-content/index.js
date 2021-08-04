@@ -7,7 +7,7 @@ import columnsStyles from './columns';
 import { css } from 'frontity';
 import embedStyles from './embeds';
 import headingsStyles from './headings';
-import hljsStyles from 'highlight.js/styles/base16/darcula.css';
+import hljsStyles from './hljs';
 import mediaStyles from './media';
 import quoteStyles from './quote';
 import tableStyles from './table';

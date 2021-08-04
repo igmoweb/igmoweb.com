@@ -19,8 +19,8 @@ const fontSizes = {
 	h5: '1.375rem',
 	h6: '1.375rem',
 	big: '1.625rem',
-	small: '0.875rem',
-	xsmall: '0.79rem',
+	small: '0.9rem',
+	xsmall: '0.85rem',
 };
 
 const breakpoints = {

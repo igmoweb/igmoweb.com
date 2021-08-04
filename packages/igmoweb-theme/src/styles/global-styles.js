@@ -64,7 +64,7 @@ const cssReset = css`
 
 const base = css`
 	html {
-		font-size: 16px;
+		font-size: ${ config.fontSizes.base };
 	}
 
 	body {

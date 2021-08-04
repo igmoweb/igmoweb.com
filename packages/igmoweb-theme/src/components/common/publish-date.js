@@ -1,8 +1,8 @@
-const PublishDate = ( { postDate } ) => {
+const PublishDate = ( { className, postDate } ) => {
 	const date = new Date( postDate );
 	const options = { year: 'numeric', month: 'short', day: 'numeric' };
 	return (
-		<div className="publish-date">
+		<div className={ className }>
 			{ date.toLocaleDateString( 'es-ES', options ) }
 		</div>
 	);

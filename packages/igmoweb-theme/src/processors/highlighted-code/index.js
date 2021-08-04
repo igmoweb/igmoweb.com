@@ -4,7 +4,7 @@ import { css, loadable } from 'frontity';
 const HighlitedCode = loadable( () => import( './highlighted-code' ) );
 
 const LANGS = {
-	plain: '',
+	plain: 'javascript',
 	jscript: 'javascript',
 };
 
@@ -32,6 +32,7 @@ export default {
 		const { children, props } = node;
 		const { className = '' } = props;
 		// Find the language
+
 		const brush = /brush\:\s([a-zA-Z]*)\;/gm.exec( className );
 		const lang = mapWPLangs( _get( brush, '[1]', '' ) );
 

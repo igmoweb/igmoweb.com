@@ -8,10 +8,12 @@ import Single from './single';
 import Switch from '@frontity/components/switch';
 import Title from './head/title';
 import { globalStyles } from '../styles';
-import { Global, Head, connect, styled } from 'frontity';
+import { Global, Head, connect, loadable, styled } from 'frontity';
 import Container from './common/container';
 import { darken } from 'polished';
 import theme from '../styles/theme';
+
+const TopBanner = loadable( () => import( './common/top-banner' ) );
 
 const Root = ( { state } ) => {
 	const data = state.source.get( state.router.link );
@@ -58,7 +60,11 @@ const Root = ( { state } ) => {
 			<HeaderContainer>
 				<Header />
 			</HeaderContainer>
-			<Container>{ displayTopBanner && <div>TOP BANNER</div> }</Container>
+			{ displayTopBanner && (
+				<Container>
+					<TopBanner />
+				</Container>
+			) }
 			<Container>
 				<Switch>
 					<Loading when={ isFetching } />
