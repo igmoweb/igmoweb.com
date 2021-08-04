@@ -11,6 +11,7 @@ export default {
 	},
 	state: {
 		theme: {
+			topBannerPage: '/hola',
 			autoPrefetch: 'hover',
 			menu: [
 				[ 'Cursos', '/cursos' ],
@@ -24,10 +25,6 @@ export default {
 	},
 	libraries: {
 		html2react: {
-			/**
-			 * Add a processor to `html2react` so it processes the `<img>` tags
-			 * inside the content HTML. You can add your own processors too
-			 */
 			processors: [ image, iframe, link, ...customProcessors ],
 		},
 	},

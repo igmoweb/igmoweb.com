@@ -34,6 +34,7 @@ const Pagination = ( { actions, state } ) => {
 
 const StyledPagination = styled.div`
 	display: flex;
+	align-items: baseline;
 	> * {
 		flex-grow: 1;
 	}

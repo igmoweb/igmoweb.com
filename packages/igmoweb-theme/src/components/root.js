@@ -73,11 +73,13 @@ const Root = ( { state } ) => {
 					<PageError when={ isError || isAuthor } />
 				</Switch>
 			</Container>
-			<FooterContainer>
-				<Container>
-					<Footer />
-				</Container>
-			</FooterContainer>
+			{ ! isError && (
+				<FooterContainer>
+					<Container>
+						<Footer />
+					</Container>
+				</FooterContainer>
+			) }
 		</>
 	);
 };

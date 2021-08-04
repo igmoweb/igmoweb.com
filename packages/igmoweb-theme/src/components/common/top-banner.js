@@ -16,7 +16,7 @@ const { fontSizes } = theme;
 const TopBanner = connect( ( { actions, state } ) => {
 	const { topBannerPage } = state.theme;
 	useEffect( () => {
-		actions.source.fetch( 'hola' );
+		actions.source.fetch( topBannerPage );
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [] );
 
@@ -33,7 +33,7 @@ const TopBanner = connect( ( { actions, state } ) => {
 	const { id, type } = data;
 
 	const post = _get( state.source, `[${ type }][${ id }]`, null );
-	console.log( { data, post } );
+
 	if ( ! post ) {
 		return null;
 	}
